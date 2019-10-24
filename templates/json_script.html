@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>json_script</title>
+</head>
+<body>
+
+# Python bir objeyi güvenli şekilde JSON a çevirip javascript de kullanılabilir.
+# Örneğin bir listeyi ön yüzde json objesine çevirip javascript ile işleyebiliriz.
+## Gelen liste elementleri içerisinde XSS için açık yaratacak karakterler (< > &) varsa escape eder
+
+# application/json türünde bir script oluşturup id sini json-data olarak oluşturur ve içeriğine gelen listeyi yazar
+{{ kayitlar|json_script:"json-data" }}
+
+
+# Javascript ile json a çevrilen listeye ulaşıp işlem yapılabilir.
+<script>
+    var gelen_json = JSON.parse(document.getElementById('json-data').textContent);
+    console.log(gelen_json);
+</script>
+
+
+</body>
+</html>

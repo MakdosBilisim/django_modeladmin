@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ljust</title>
+</head>
+<body>
+
+# İstenilen sayıdan değişkenin karakter sayısını çıkarıp, değişkenin sağına bşluk olarak ekler
+# Ör: muslu = 5 "muslu"+"15boşluk"
+
+"{{ "muslu yüksektepe"|ljust:"20" }}"
+
+
+{% for k in kullanicilar %}
+    ""{{ k.isim|ljust:"20" }}""
+{% endfor %}
+
+</body>
+</html>

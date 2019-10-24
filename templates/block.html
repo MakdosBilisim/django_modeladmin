@@ -1,0 +1,21 @@
+{% extends "block_extend.html" %}
+
+{% block head %}
+    <meta name="description" content="Burası block.html den geliyor."/>
+{% endblock head %}
+
+{% block orta %}
+    <h1>Burası block.html</h1>
+{% endblock orta %}
+
+
+# Bu sayfa çağrıldığında sabit bir tasarım sayfası çağrılıp sadece değişecek alanlar (block) değiştirilir.
+# extends ile dış şablon çağrılır ve şablondaki blocklar ile aynı blockların içeriği doldurulur.
+# block_extend.html de bulunan blockların aynı isimleri sadece değişir.
+# Block kullanılmaz ya da aynı isimde block yazılmaz ise dış şablonda eşleşmediği için yazılar gözükmez.
+
+{% block kullanilmayan %}
+    <h1>Burası kullanılmayan block. Sayfa çağrılınca gösterilmeyecek.</h1>
+{% endblock kullanilmayan %}
+
+

@@ -1,0 +1,19 @@
+{% load static l10n humanize %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+{% for k in kullanici_listesi %}
+
+    {{ k.decimalfield }} {{ k.isim }}
+<br>
+
+{% endfor %}
+
+</body>
+</html>

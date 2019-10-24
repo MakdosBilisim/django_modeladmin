@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>csrf_token</title>
+</head>
+<body>
+
+<form action="" method="POST">
+
+    {{ csrf_token }}
+
+    {% csrf_token %}
+
+    <input type="text">
+    <button>Gönder</button>
+
+</form>
+
+
+<hr>
+# POST (veya GET) edilecek formlarda CSRF koruması için sürekli değişen bir token üretimi yapar<br/>
+
+{% verbatim %}{% csrf_token %}{% endverbatim %} Mutlaka form etiketi içinde olmalı ve hatta en üstte bulunmalı.<br/>
+{% verbatim %}{{ csrf_token }}{% endverbatim %} = Oluşturulan tokenı ekrana basar<br/>
+{% verbatim %}{% csrf_token %}{% endverbatim %} = Token anahtarını hidden input içinde oluşturur.
+
+</body>
+</html>

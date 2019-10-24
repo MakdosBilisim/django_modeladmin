@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>add</title>
+</head>
+<body>
+
+
+# Gönderilen değer string ise sağına ekler
+{{ stringdeger|add:"2" }}
+
+
+# Gönderilen değer integer ise toplama işlemi yapar
+{{ bes|add:"2" }}
+
+# Gönderilen değer integer ise ve - değer eklenirse çıkartma işlemi yapar
+{{ bes|add:"-2" }}
+
+# 2 listeyi birleştirir
+{{ liste|add:digerliste }}
+
+# Queryset ler liste döndürülüp gönderilirse birleştirir
+{{ kullanicilar|add:d_ilebiten_kullanicilar }}
+
+# 2 listeyi birleştirip döngüye almak
+{% for k in kullanicilar|add:d_ilebiten_kullanicilar %}
+    {{ k.isim }}
+{% endfor %}
+
+
+# 2 farklı tür birleştirilirse boş string gösterilir
+{{ stringdeger|add:d_ilebiten_kullanicilar }}
+
+
+</body>
+</html>

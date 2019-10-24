@@ -1,0 +1,9 @@
+{% load i18n %}
+<div class="col c6">
+    <label>{% blocktrans with filter_title=title %} {{ filter_title }} {% endblocktrans %}</label>
+    <select onchange="window.location.href=this.value">
+        {% for choice in choices %}
+            <option {% if choice.selected %}selected{% endif %} value="{{ choice.query_string|iriencode }}" data-title="{{ choice.display }}">{{ choice.display }}</option>
+        {% endfor %}
+    </select>
+</div>

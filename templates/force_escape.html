@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>force_escape</title>
+</head>
+<body>
+
+# Uygulanan bir filtre sonrasında çıktıyı tekrar escape etmek için kullanılır.
+# Ör: Değişkeni p etikei içine alıp sonra force_escape ile html etiketi halinde gösterir ve tarayıcıda çalışması engellenir
+
+{% verbatim %}
+    {{ "burayı p etiketi içine al"|linebreaks }}
+    {{ "burayı p etiketi içine al"|linebreaks|force_escape }}
+
+    {{ "burayı p etiketi içine al"|linebreaks|escape }}
+{% endverbatim %}
+
+{{ "burayı p etiketi içine al"|linebreaks }}
+{{ "burayı p etiketi içine al"|linebreaks|force_escape }}
+
+{{ "burayı p etiketi içine al"|linebreaks|escape }}
+
+</body>
+</html>

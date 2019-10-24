@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>date</title>
+</head>
+<body>
+
+# Tarih değeri içeren değişkenlerde tarih gösterim formatları
+# USE_L10N değeri önemli
+# PHP date formatları kullanılabilir. https://secure.php.net/manual/tr/function.date.php
+
+{% for k in kullanicilar %}
+    {{ k.islemtarih|date:"D d M Y" }}    {{ k.islemtarih|date }}    {{ k.islemtarih|time:"H:i" }}    {{ k.islemtarih|date:"SHORT_DATE_FORMAT" }}     {{ k.islemtarih|date:"SHORT_DATETIME_FORMAT" }}
+{% endfor %}
+
+
+</body>
+</html>

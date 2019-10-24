@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dictsortreversed</title>
+</head>
+<body>
+
+
+# dict lerdeki alanlara göre TERS sıralama yaptırılabilir.
+
+<ul>
+    {% for k in kullanicilar|dictsortreversed:"isim" %}
+        <li>{{ k.isim }} {{ k.soyisim }} {{ k.yazar }}</li>
+    {% endfor %}
+</ul>
+
+<ul>
+    {% for k in kullanicilar|dictsortreversed:"soyisim" %}
+        <li>{{ k.isim }} {{ k.soyisim }} {{ k.yazar }}</li>
+    {% endfor %}
+</ul>
+
+<ul>
+    {% for k in kayitlar|dictsortreversed:"kullanici.yas" %}
+        <li>{{ k.kullanici.adi|capfirst }} ({{ k.kullanici.yas }}) - {{ k.departman }}</li>
+    {% endfor %}
+</ul>
+
+</body>
+</html>
+

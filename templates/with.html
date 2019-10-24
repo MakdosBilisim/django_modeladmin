@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% with 'with ile oluşturuldu' as etiket %}
+        <title>{{ etiket }}</title>
+        <meta name="description" content="{{ etiket }}"/>
+    {% endwith %}
+</head>
+<body>
+
+# Bir değişkeni önbelle alıp tekrar tekrar sorgulanmamasını sağlar
+# Sonuç yalnızca blok içinde kullanılabilir.
+
+{% with kayit_sayisi=kullanicilar.count %}
+    {{ kayit_sayisi }} adet kayıt bulundu!
+{% endwith %}
+
+
+{% with kullanicilar.count as kayit_sayisi %}
+    {{ kayit_sayisi }} adet kayıt bulundu!
+{% endwith %}
+
+{% with yirmi=20 seksen=80  kayit_sayisi=kullanicilar.count %}
+    {{ seksen|add:yirmi|add:kayit_sayisi }} adet kayıt bulundu!
+{% endwith %}
+
+
+# Döngü içinde with değeri değişeceği için ön bellek kullanılamaz.
+{% for k in kullanicilar %}
+
+    {% with sehir=k.sehir %}
+        {{ k.isim }} {{ sehir }}
+    {% endwith %}
+
+
+    {% with idsi=k.id %}
+        {{ idsi|add:118 }}
+    {% endwith %}
+
+{% endfor %}
+
+
+</body>
+</html>

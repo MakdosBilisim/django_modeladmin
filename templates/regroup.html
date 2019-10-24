@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>regroup</title>
+</head>
+<body>
+
+# regroup ile aynı değerleri tek yerde toplayıp stillendirilebilir.
+
+{% regroup kullanicilar by soyisim as soyismegore_kullanicilar %}
+
+<ul>
+    {% for kayitlar in soyismegore_kullanicilar %}
+        <li>grouper:{{ kayitlar.grouper }}
+            <ul>
+                {% for kayit in kayitlar.list %}
+                    <li>isim: {{ kayit.isim }}: soyisim:{{ kayit.soyisim }}</li>
+                {% endfor %}
+            </ul>
+        </li>
+    {% endfor %}
+</ul>
+
+</body>
+</html>

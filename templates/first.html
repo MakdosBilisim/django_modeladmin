@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>first</title>
+</head>
+<body>
+
+# Listedeki ilk elemanı gösterir
+
+{{ liste|first }}
+
+
+# kullanicilar listesindeki ilk kayıt
+{{ kullanicilar|first }}
+
+# Querysetteki ilk kaydın bilgilerini al.
+{% with kullanicilar|first as ilkkayit %}
+    {{ ilkkayit.soyisim }}
+{% endwith %}
+
+</body>
+</html>

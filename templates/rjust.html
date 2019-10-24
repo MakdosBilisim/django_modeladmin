@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>rjust</title>
+</head>
+<body>
+
+# İstenilen sayıdan değişkenin karakter sayısını çıkarıp, değişkenin soluna boşluk olarak ekler
+# Ör: muslu = 5 "muslu"+"15boşluk"
+
+"{{ "muslu yüksektepe"|rjust:"20" }}"
+
+
+{% for k in kullanicilar %}
+    ""{{ k.isim|rjust:"20" }}""
+{% endfor %}
+
+</body>
+</html>

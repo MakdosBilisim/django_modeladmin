@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cut</title>
+</head>
+<body>
+
+# İstenilen karakterleri değişkenin içinden çıkarır. Yani karakteri siler.
+
+
+{% verbatim %}
+{{ ' m u s l u'|cut:"" }}
+{% endverbatim %}
+
+| m u s l u->{{ ' m u s l u'|cut:"" }}<-
+
+
+{% verbatim %}
+{{ ' m u s l u'|cut:" " }}
+{% endverbatim %}
+
+| m u s l u->{{ ' m u s l u'|cut:" " }}<-
+
+
+{% verbatim %}
+{{ 'aaababa'|cut:"a" }}
+{% endverbatim %}
+
+|aaababa->{{ 'aaababa'|cut:"a" }}<-
+
+
+{% for k in kullanicilar %}
+    {{ k.isim|capfirst }} {{ k.soyisim|cut:"a" }}
+{% endfor %}
+
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>stringformat</title>
+</head>
+<body>
+# Değişken değeri belirli formatlarda göstermek için kullanılır
+# https://docs.python.org/3/library/stdtypes.html#old-string-formatting
+<ul>
+    {% for k in kullanicilar %}
+        <li>
+            decimalfield: {{ k.decimalfield }}
+            E: {{ k.decimalfield|stringformat:"E" }}
+            s: {{ k.decimalfield|stringformat:"s" }}
+            a: {{ k.decimalfield|stringformat:"a" }}
+            f: {{ k.decimalfield|stringformat:"f" }}
+            0: {{ k.decimalfield|stringformat:"u" }}
+        </li>
+    {% endfor %}
+</ul>
+
+</body>
+</html>

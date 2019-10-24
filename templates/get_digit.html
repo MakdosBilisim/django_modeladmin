@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>get_digit</title>
+</head>
+<body>
+
+# Değişken tam sayı ise sağdan başlayarak (birler basamağı) istenilen basamaktaki değeri gösterir
+# Örn: 123456789 in 2. basamağı 8
+# Ondalıklı sayılarda kusürat dikkate alınmaz
+
+# Değişken tam sayı değilse değişkeni tekrar gösterir
+muslu: {{ 'muslu'|get_digit:"2" }}
+
+# Sayı tek basamaklı ise istenen basamak birden büyük ise 0 döndürür
+1 {{ 1|get_digit:"2" }}
+9 {{ 9|get_digit:"2" }}
+
+
+12: {{ 12|get_digit:"2" }}
+123: {{ 123|get_digit:"2" }}
+1234: {{ 1234|get_digit:"2" }}
+-12345: {{ -12345|get_digit:"2" }}
+-21: {{ -21|get_digit:"2" }}
+123456789: {{ 123456789|get_digit:"2" }}
+
+# Ondalıklı sayılarda küsurat dikkate alınmaz
+# Ondalıklı sayılarda 0. basamak tam sayı kısmıdır
+Ondalık:
+10.2: {{ 10.2|get_digit:"2" }}
+10.21: {{ 10.21|get_digit:"2" }}
+10.21: {{ 10.21|get_digit:"1" }}
+10.21: {{ 10.21|get_digit:"0" }}
+
+
+{% for k in kullanicilar %}
+
+    {% if k.decimalfield %}
+        decimalfield:{{ k.decimalfield }} 0:{{ k.decimalfield|get_digit:0 }} 2:{{ k.decimalfield|get_digit:2 }}
+    {% endif %}
+
+{% endfor %}
+
+</body>
+</html>

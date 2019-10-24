@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>truncatewords_html</title>
+</head>
+<body>
+
+# HTML etiketleri arasındaki metin gösterilecek kelime sayısı
+# Yine HTML çıktı olarak bırakır
+
+
+
+{{ siralama|truncatewords_html:2 }}
+
+
+{{ htmlkod|truncatewords_html:2 }}
+
+
+{{ "birinci ikinci üçüncü dördüncü"|truncatewords_html:2 }}
+
+</body>
+</html>

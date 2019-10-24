@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>default_if_none</title>
+</head>
+<body>
+
+# Değişken YALNIZCA None değerine sahipse farklı bilgi göstermek
+# Değişken değeri boş iken bilgi vermek için default etiketi kullanılmalı.
+
+
+# Değişken False ise yine False döndürür
+{{ False|default_if_none:"Değer None" }}
+
+
+# Değişken boş ise herhangi bir şey yazmaz. default filtresinde Değer Boş yazar
+{{ ""|default_if_none:"Değer Boş" }}
+
+
+# Döngüde None değerli bir değişken var ise başka bir değer göster
+{% for k in kullanicilar %}
+    {{ k.yazar|default_if_none:"Değer None" }}    {{ k.decimalfield|default_if_none:"Değer None" }}
+{% endfor %}
+
+
+</body>
+</html>

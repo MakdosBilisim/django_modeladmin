@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>capfirst</title>
+</head>
+<body>
+
+# Değişkenin yalnızca İLK karakterini büyük harfe çevirir
+{{ 'muslu'|capfirst }}
+
+{{ 'muslu yüksektepe'|capfirst }}
+
+{{ '35 muslu'|capfirst }}
+
+
+{% for k in kullanicilar %}
+    {{ k.isim|capfirst }} {{ k.soyisim|capfirst }}
+{% endfor %}
+
+</body>
+</html>

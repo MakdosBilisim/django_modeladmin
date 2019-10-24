@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>for</title>
+</head>
+<body>
+
+# liste, string ve sözlük(dict)ler için döngü sağlar.
+# sıralama yaptırılabilir
+# kayıt yoksa bilgi verilir
+# döngü sırası hakkında bilgi alınıp işlem yapılabilir.
+
+<ul>
+    {% for deger in "abcçde" reversed %}
+        <li>{{ deger }}</li>
+    {% endfor %}
+</ul>
+<hr>
+<ul>
+    {% for deger in "12345abc" %}
+        <li>{{ deger }}</li>
+    {% endfor %}
+</ul>
+<hr>
+<h2>Kayıt sayısı : {{ kullanici_listesi|length }}</h2>
+
+<ul>
+    # isim alanına göre 1-9 a-z
+    {% for kullanici in kullanici_listesi|dictsort:'isim' %}
+        <li>{{ kullanici.isim }}</li>
+    {% endfor %}
+    # isim alanına göre z-a 9-1
+    {% for kullanici in kullanici_listesi|dictsortreversed:'soyisim' %}
+        <li>{{ kullanici.soyisim }}</li>
+    {% endfor %}
+    <hr>
+    {% for kullanici in kullanici_listesi %}
+        <li>{{ kullanici }} --> __str__ den dönen bilgiler yazılır</li>
+    {% endfor %}
+
+    <hr>
+    {% for kullanici in kullanici_listesi %}
+        <li>{{ kullanici.isim }} --> sadece modelki (db tablodaki) isim alanı yazılır</li>
+    {% endfor %}
+
+    <hr>
+
+    İlk 3 kaydı göster
+    {% for kullanici in kullanici_listesi|slice:"3" %}
+        <li>{{ kullanici.isim }}</li>
+    {% endfor %}
+
+    Son 3 kaydı göster
+    {% for kullanici in kullanici_listesi|dictsortreversed:'id'|slice:":3" %}
+        <li>{{ kullanici.isim }}</li>
+    {% endfor %}
+
+</ul>
+
+<ul>
+
+    {% for kullanici in kullanici_listesi %}
+        <li>{{ forloop.counter }} -> {{ kullanici.isim }} - counter - Döngünün 1 den başlayarak kayıt sırası</li>
+        <li>{{ forloop.counter0 }} -> {{ kullanici.isim }} counter0- Döngünün 0 den başlayarak kayıt sırası</li>
+        <li>{{ forloop.revcounter }} -> {{ kullanici.isim }} - revcounter - Döngünün sonundan itibaren 1 den başlayarak kayıt sayısı</li>
+        <li>{{ forloop.revcounter0 }} -> {{ kullanici.isim }} - revcounter0 - Döngünün sonundan itibaren 0 den başlayarak kayıt sayısı/li>
+        <li>{{ forloop.first }} -> {{ kullanici.isim }} - first - Döngüdeki ilk kayıt mı? True ya da False</li>
+        <li>{{ forloop.last }} -> {{ kullanici.isim }} - last - Döngüdeki son kayıt mı? True ya da False</li>
+        <hr>
+    {% endfor %}
+
+    {% for k in "123" %}
+        {% for kullanici in kullanici_listesi %}
+            <li>{{ forloop.parentloop }} Üst döngünün ilk kaydı mı? {{ forloop.parentloop.first }} Üst Döngünün son kaydı mı? {{ forloop.parentloop.last }} -> {{ kullanici.isim }} - parentloop</li>
+            <hr>
+        {% endfor %}
+    {% endfor %}
+
+</ul>
+<hr>
+<ul>
+    {% for kullanici in bos_kullanici_listesi %}
+        <li>{{ kullanici }}</li>
+    {% empty %}
+        <li>İsmi "yok" ile biten hiç kayıt bulunamadı!</li>
+    {% endfor %}
+</ul>
+<hr>
+<ul>
+    {% for value in ornek_dict.values %}
+        <li>{{ value }}</li>
+    {% endfor %}
+    {% for key in ornek_dict.keys %}
+        <li>{{ key }}</li>
+    {% endfor %}
+</ul>
+<hr>
+<ul>
+    {% for key, value in ornek_dict.items %}
+        <li>{{ key }}: {{ value }}</li>
+    {% endfor %}
+</ul>
+
+</body>
+</html>

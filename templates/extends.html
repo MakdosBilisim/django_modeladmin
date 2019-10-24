@@ -1,0 +1,19 @@
+{#{% extends "ozelklasor/base.html" %}#}
+
+{% extends extendadi %}
+
+
+# extend ile bir şablon sayfasının belirli yerleri doldurulur.
+# extend ilk yüklenen etiket olmalı
+# Yalnızca bir extend kullanılabilir
+# Aynı block isimleri kullanılmalı
+# Yüklenecek üst şablon dinamik seçilecek ise views.py den gönderilebilir.
+
+
+{% block orta %}Burası extends.html{% endblock orta %}
+
+
+
+{% block boylebirblockyok %}Burası eşleşmediği için gözükmeyecek{% endblock boylebirblockyok %}
+
+

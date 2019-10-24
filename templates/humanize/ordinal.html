@@ -1,0 +1,18 @@
+{% load humanize %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ordinal</title>
+</head>
+<body>
+
+# Tam sayı değerin dile (settings.py LANGUAGE_CODE) göre sırasını yazar
+# Türkçede birinci, ikinci gibi eklemez.
+
+{% for l in kullanicilar %}
+   id: {{ l.id|ordinal }}
+{% endfor %}
+
+</body>
+</html>

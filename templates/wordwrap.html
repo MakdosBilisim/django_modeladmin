@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>wordwrap</title>
+</head>
+<body>
+
+# İstenilen sayıdan sonraki karakterleri alt satıra atar
+
+{% for l in kullanicilar %}
+    {{ l.isim|wordwrap:1 }}
+{% endfor %}
+
+
+</body>
+</html>

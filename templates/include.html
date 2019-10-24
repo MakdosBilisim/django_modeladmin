@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>include</title>
+</head>
+<body>
+
+# dışarıdan .html dosyası çağırmak
+
+Burası include.html
+<hr>
+{% include "include_edilecek.html" %}
+<hr>
+{% include include_edilecek %}
+<hr>
+{% include "include_edilecek.html" with isim="muslu" %}
+<hr>
+Burası include.html
+
+
+
+</body>
+</html>

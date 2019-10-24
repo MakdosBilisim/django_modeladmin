@@ -1,0 +1,21 @@
+{% load i18n humanize %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>load</title>
+</head>
+<body>
+
+# özel hazırlanan ve hazırda olan templatetags ları kullanmak için ekler
+# humanize için settings.py INSTALLED_APPS 'django.contrib.humanize' eklenmeli
+
+{{ 1|apnumber }}
+{{ 145645643514654|intcomma }}
+
+{% blocktrans %}
+    Hello
+{% endblocktrans %}
+
+</body>
+</html>

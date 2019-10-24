@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>if</title>
+</head>
+<body>
+
+# if ile kontrol edilen değişken var olmalı, boş olmamalı ve false değerinde olmamalı
+
+{% if bos_kullanici_listesi %}bos_kullanici_listesi boş değil {{ bos_kullanici_listesi|length }}{% endif %}
+
+<hr>
+{% if kullanici_listesi %}
+    kullanici_listesi boş değil
+    Kayıt sayısı: {{ kullanici_listesi|length }}
+{% else %}
+    Kayıt bulunamadı!
+{% endif %}
+
+<hr>
+<span>AND</span>
+{% if kullanici_listesi and bos_kullanici_listesi %}
+    # her iki listede dolu ise
+    if kullanici_listesi and bos_kullanici_listesi
+{% endif %}
+
+<hr>
+<span>OR</span>
+{% if kullanici_listesi or bos_kullanici_listesi %}
+    # 2 listeden biri dolu ise
+    if kullanici_listesi or bos_kullanici_listesi
+{% endif %}
+
+
+<hr>
+<span> == </span>
+# listenin kayıt sayısı 3 den fazla ise
+{% if kullanici_listesi|length > 3 %}Kayıt sayısı 3 den fazla{% endif %}
+
+# değişken 5 ise
+{% if bes == 5 %}5{% endif %}
+
+
+<hr>
+<span> != </span>
+# değişken 5 değil ise
+{% if bes != 5 %}5 değil{% endif %}
+
+<ul>
+# dict elemanlarından value değerleri armut olmayanlar
+    {% for key, value in ornek_dict.items %}
+        {% if value != 'armut' %}<li>{{ key }}: {{ value }}</li>{% endif %}
+    {% endfor %}
+</ul>
+
+<hr>
+<span> < </span>
+# değişken 5 den küçük
+{% if bes < 5 %}5 ten küçük{% endif %}
+
+<ul>
+# dict elemanlarından key değeri 2 den küçük olanlar
+    {% for key, value in ornek_dict.items %}
+        {% if key < 2 %}<li>{{ key }}: {{ value }}</li>{% endif %}
+    {% endfor %}
+</ul>
+
+<hr>
+<span> <= </span>
+# değişken değeri 5 ve daha az ise
+{% if bes <= 5 %}5{% endif %}
+
+<ul>
+# dict elemanlarından key değeri 2 ve daha az olanlar
+    {% for key, value in ornek_dict.items %}
+        {% if key <= 2 %}<li>{{ key }}: {{ value }}</li>{% endif %}
+    {% endfor %}
+</ul>
+
+<hr>
+<span> > </span>
+# değişken 3 den büyükise
+{% if bes > 3 %}3 den büyük{% endif %}
+
+<ul>
+# listedeki anahtar değeri 2 den büyük olanlar
+    {% for key, value in ornek_dict.items %}
+        {% if key > 2 %}<li>{{ key }}: {{ value }}</li>{% endif %}
+    {% endfor %}
+</ul>
+
+<hr>
+<span> >= </span>
+# değişken değeri 3 ve üstü ise
+{% if bes >= 3 %}3 ve üstü{% endif %}
+
+<ul>
+# listedeki anahtar değeri 2 ve daha fazla olanlar
+    {% for key, value in ornek_dict.items %}
+        {% if key >= 2 %}<li>{{ key }}: {{ value }}</li>{% endif %}
+    {% endfor %}
+</ul>
+
+
+<hr>
+<span> in </span>
+# string içinde 8 var mı
+{% if "8" in "12345679" %}8 var{% endif %}
+
+<ul>
+# dict elemanlarından value değeiri içinde a geçenler
+    {% for value in ornek_dict.values %}
+        {% if 'a' in value %}<li>{{ value }}</li>{% endif %}
+    {% endfor %}
+</ul>
+
+
+<hr>
+<span> not in </span>
+# string içinde 8 var mı
+{% if "8" not in "12345679" %}8 yok{% endif %}
+
+<ul>
+# dict elemanlarından value değerinde e geçmeyen kayıtları döndür
+    {% for value in ornek_dict.values %}
+        {% if 'e' not in value %}<li>{{ value }}</li>{% endif %}
+    {% endfor %}
+</ul>
+
+
+<hr>
+<span> is </span>
+# Eşitlik kontrolü
+{% if 8 is 8 %}Eşitlik{% endif %}
+
+<ul>
+# dict elemanlarından value değeri ile istenen değer aynı olan kayıtlar
+    {% for value in ornek_dict.values %}
+        {% if value is 'elma' %}<li>{{ value }}</li>{% endif %}
+    {% endfor %}
+</ul>
+
+<hr>
+<span> is not </span>
+# Eşitlik kontrolü
+{% if 8 is not 9 %}Eşitlik sağlanamadı{% endif %}
+
+
+</body>
+</html>

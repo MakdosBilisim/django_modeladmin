@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>wordcount</title>
+</head>
+<body>
+
+# Değişken içindeki kelimeleri (aynı zamanda işaretleri de) sayar.
+
+<div>
+    <ul>
+        <li>{{ "Bir 1 İki 2 Üç Dört"|wordcount }}</li>
+        <li>{{ "<p>Merhaba nasılsın ! ? ()</p>"|wordcount }}</li>
+    </ul>
+</div>
+
+{% for l in kullanicilar %}
+    {% if  l.isim|wordcount >= 2 %}
+        {{ l.soyisim|wordcount }}
+    {% endif %}
+{% endfor %}
+
+</body>
+</html>

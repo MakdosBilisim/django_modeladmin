@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>urlize</title>
+</head>
+<body>
+
+# Bir metin içeriğinde http:// ve https:// ile başlayan linkleri tıklanabilir ( a etiketi ile birlikte ) hale getirir.
+# Mail adresleri için @ işareti olmak zorunda
+# rel="nofollow" ekleyerek linkin gideceği yoldaki sorunlardan kaçılır
+# Top level alan adları destekleniyor (.com, .net, .org, .edu, .gov, .int, .mil)
+
+<div>
+    <ul>
+        <li>{{ "Merhaba; makdos.com.tr den ulaşabilirsiniz!"|urlize }}</li>
+        <li>{{ "Merhaba; tik.to/muslu dan ulaşabilirsiniz!"|urlize }}</li>
+        <li>{{ "Merhaba; burayı tıklayarak www.tik.to/muslu ya ulaşabilirsiniz!"|urlize }}</li>
+        <li>{{ "Merhaba; https://makdos.com dan ulaşabilirsiniz!"|urlize }}</li>
+        <li>{{ "muslu@makdos.com a mail gönderebilirsiniz"|urlize }}</li>
+    </ul>
+</div>
+</body>
+</html>

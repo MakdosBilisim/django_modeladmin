@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>escapejs</title>
+</head>
+<body>
+
+# escapejs ile javascript komutlarını güvenli hale getirerek tarayıcı tarafında çalışmasını engelleriz
+# Tam olarak güvenli hale getirmese de söz dizimi hatası almamayı sağlar
+
+<script>{{ alert|escapejs }}</script>
+
+
+# Gelen değer:
+{{ alert }}
+
+
+</body>
+</html>

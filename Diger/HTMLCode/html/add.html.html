@@ -1,0 +1,64 @@
+<html>
+<head>
+<title>add.html</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #333333;}
+.s1 { color: #795da3;}
+.s2 { color: #63a35c;}
+.s3 { color: #183691; font-weight: bold;}
+.s4 { color: #333333; font-weight: bold;}
+.s5 { color: #333333;}
+.s6 { color: #795da3;}
+.s7 { color: #0086b3;}
+.s8 { color: #183691;}
+.s9 { color: #63a35c;}
+.s10 { color: #a71d5d;}
+.ln { color: #333333; font-weight: normal; font-style: normal; }
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+add.html</font>
+</center></td></tr></table>
+<pre><a name="l1"><span class="ln">1    </span></a><span class="s0">&lt;!DOCTYPE </span><span class="s1">html</span><span class="s0">&gt;</span>
+<a name="l2"><span class="ln">2    </span></a>&lt;<span class="s2">html </span><span class="s1">lang=</span><span class="s3">&quot;en&quot;</span><span class="s0">&gt;</span>
+<a name="l3"><span class="ln">3    </span></a>&lt;<span class="s2">head</span><span class="s0">&gt;</span>
+<a name="l4"><span class="ln">4    </span></a>    &lt;<span class="s2">meta </span><span class="s1">charset=</span><span class="s3">&quot;UTF-8&quot;</span><span class="s0">&gt;</span>
+<a name="l5"><span class="ln">5    </span></a>    &lt;<span class="s2">title</span><span class="s0">&gt;</span><span class="s4">add</span><span class="s0">&lt;/</span><span class="s2">title</span><span class="s0">&gt;</span>
+<a name="l6"><span class="ln">6    </span></a>&lt;/<span class="s2">head</span><span class="s0">&gt;</span>
+<a name="l7"><span class="ln">7    </span></a>&lt;<span class="s2">body</span><span class="s0">&gt;</span>
+<a name="l8"><span class="ln">8    </span></a>
+<a name="l9"><span class="ln">9    </span></a>
+<a name="l10"><span class="ln">10   </span></a><span class="s4"># Gönderilen değer string ise sağına ekler</span>
+<a name="l11"><span class="ln">11   </span></a><span class="s5">{{ </span><span class="s6">stringdeger</span><span class="s7">|</span><span class="s6">add</span><span class="s5">:</span><span class="s8">&quot;2&quot; </span><span class="s5">}}</span>
+<a name="l12"><span class="ln">12   </span></a>
+<a name="l13"><span class="ln">13   </span></a>
+<a name="l14"><span class="ln">14   </span></a><span class="s4"># Gönderilen değer integer ise toplama işlemi yapar</span>
+<a name="l15"><span class="ln">15   </span></a><span class="s5">{{ </span><span class="s6">bes</span><span class="s7">|</span><span class="s6">add</span><span class="s5">:</span><span class="s8">&quot;2&quot; </span><span class="s5">}}</span>
+<a name="l16"><span class="ln">16   </span></a>
+<a name="l17"><span class="ln">17   </span></a><span class="s4"># Gönderilen değer integer ise ve - değer eklenirse çıkartma işlemi yapar</span>
+<a name="l18"><span class="ln">18   </span></a><span class="s5">{{ </span><span class="s6">bes</span><span class="s7">|</span><span class="s6">add</span><span class="s5">:</span><span class="s8">&quot;-2&quot; </span><span class="s5">}}</span>
+<a name="l19"><span class="ln">19   </span></a>
+<a name="l20"><span class="ln">20   </span></a><span class="s4"># 2 listeyi birleştirir</span>
+<a name="l21"><span class="ln">21   </span></a><span class="s5">{{ </span><span class="s6">liste</span><span class="s7">|</span><span class="s6">add</span><span class="s5">:</span><span class="s6">digerliste </span><span class="s5">}}</span>
+<a name="l22"><span class="ln">22   </span></a>
+<a name="l23"><span class="ln">23   </span></a><span class="s4"># Queryset ler liste döndürülüp gönderilirse birleştirir</span>
+<a name="l24"><span class="ln">24   </span></a><span class="s5">{{ </span><span class="s6">kullanicilar</span><span class="s7">|</span><span class="s6">add</span><span class="s5">:</span><span class="s6">d_ilebiten_kullanicilar </span><span class="s5">}}</span>
+<a name="l25"><span class="ln">25   </span></a>
+<a name="l26"><span class="ln">26   </span></a><span class="s4"># 2 listeyi birleştirip döngüye almak</span>
+<a name="l27"><span class="ln">27   </span></a><span class="s9">{% for </span><span class="s6">k </span><span class="s10">in </span><span class="s6">kullanicilar</span><span class="s7">|</span><span class="s6">add</span><span class="s5">:</span><span class="s6">d_ilebiten_kullanicilar </span><span class="s9">%}</span>
+<a name="l28"><span class="ln">28   </span></a>    <span class="s5">{{ </span><span class="s6">k</span><span class="s5">.</span><span class="s6">isim </span><span class="s5">}}</span>
+<a name="l29"><span class="ln">29   </span></a><span class="s9">{% endfor %}</span>
+<a name="l30"><span class="ln">30   </span></a>
+<a name="l31"><span class="ln">31   </span></a>
+<a name="l32"><span class="ln">32   </span></a><span class="s4"># 2 farklı tür birleştirilirse boş string gösterilir</span>
+<a name="l33"><span class="ln">33   </span></a><span class="s5">{{ </span><span class="s6">stringdeger</span><span class="s7">|</span><span class="s6">add</span><span class="s5">:</span><span class="s6">d_ilebiten_kullanicilar </span><span class="s5">}}</span>
+<a name="l34"><span class="ln">34   </span></a>
+<a name="l35"><span class="ln">35   </span></a>
+<a name="l36"><span class="ln">36   </span></a><span class="s0">&lt;/</span><span class="s2">body</span><span class="s0">&gt;</span>
+<a name="l37"><span class="ln">37   </span></a>&lt;/<span class="s2">html</span><span class="s0">&gt;</span></pre>
+</body>
+</html>

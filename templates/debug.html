@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>debug</title>
+</head>
+<body>
+
+
+# Sayfa içinde debug edebilme yetkisi
+# request.META.REMOTE_ADDR IP adresinin settings.py de INTERNAL_IPS de eklenmiş olması gerekir
+# settings.py de Debug=True olmalı
+# settings.py Templates 'context_processors' de 'django.template.context_processors.debug' ekli olmalı
+
+
+IP: {{ request.META.REMOTE_ADDR }}
+<hr>
+<hr>
+{% if debug %}
+
+
+
+    {{ user }}
+    {{ messages }}
+    {{ csrf_token }}
+
+    <hr>
+    <hr>
+
+
+
+    {% for  k in kullanici_listesi %}
+        {{ k.isim }}
+    {% endfor %}
+    <hr>
+    <hr>
+
+
+    <table border="2">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">SQL</th>
+            <th scope="col">Süre</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for sorgu in sql_queries %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ sorgu.sql|escape }}</td>
+                <td>{{ sorgu.time }}</td>
+            </tr>{% endfor %}
+        </tbody>
+    </table>
+
+
+    {#   {% filter force_escape %} {% debug %} {% endfilter %}#}
+
+{% endif %}
+
+
+</body>
+</html>
+

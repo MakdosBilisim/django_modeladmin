@@ -1,0 +1,19 @@
+{% load humanize %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>intcomma</title>
+</head>
+<body>
+
+# Yerelleştirme koşullarına göre (Ör: LANGUAGE_CODE) tam sayı değerleri her 3 basamağın virgül ile ayırır
+# Dile göre virgül yerine nokta kullanılır
+
+{{ 3500|intcomma }}
+{{ 35000|intcomma }}
+{{ 350000|intcomma }}
+{{ 3500000|intcomma }}
+
+</body>
+</html>

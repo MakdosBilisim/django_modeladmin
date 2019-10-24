@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ifchanged</title>
+</head>
+<body>
+
+# Döngünün içindeki değer değişirse işlem yaptırılır
+
+{{ dict_deger }}
+
+
+# döngünün içinde yas değeri değişirse
+
+{% for k in dict_deger %}
+
+    {% ifchanged k.yas %}
+        ifchanged
+    {% else %}
+        else
+    {% endifchanged %}
+
+    {{ k.isim }}:{{ k.yas }}
+
+{% endfor %}
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>now</title>
+</head>
+<body>
+
+# Sistem zamanını gösterir
+# Yerelleştirmeye göre format düzenlenebilir
+
+
+# 28 Ocak 2019 18:52
+{% now "j F Y H:i" %}
+
+# 18:52:24
+{% now "H:i:s" %}
+
+# settings.py de tanımlanan formatlar
+{% now "DATE_FORMAT" %}
+{% now "DATETIME_FORMAT" %}
+{% now "SHORT_DATETIME_FORMAT" %}
+
+
+
+{% now "Y" as gecerli_yil %}
+
+# geçerli yıldan 1 çıkart. Geçen sene
+{{ gecerli_yil|add:-1 }}
+
+# geçerli yıla 1 ekle. Gelecek sene
+{{ gecerli_yil|add:1 }}
+
+
+
+</body>
+</html>

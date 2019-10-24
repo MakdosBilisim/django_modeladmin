@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>safe</title>
+</head>
+<body>
+
+# html etiketler tarayıcıda yorumlanır ve script dosyaları çalıştırılır.
+
+htmlkod: {{ htmlkod }}
+
+htmlkod|safe: {{ htmlkod|safe }}
+
+htmlkod|safe|escape: {{ htmlkod|safe|escape }}
+
+htmlkod|safe|escapejs: {{ htmlkod|safe|escapejs }}
+
+
+
+</body>
+</html>

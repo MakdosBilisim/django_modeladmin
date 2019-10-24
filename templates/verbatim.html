@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>verbatim</title>
+</head>
+<body>
+
+
+{% verbatim %}
+
+Buraya Django template motorunda kullanılan etiket ve filtreler çalıştırılmadan örneklendirme için kullanılabilir.
+Ders anlatımında django template kullanımının nasıl yazıldığı gösterilebilir.
+
+{% if isim == 'muslu %}
+    isim muslu
+{% endif %}
+
+{% endverbatim %}
+
+
+
+{% verbatim block %}
+    {% verbatim %}{% endverbatim %} etiketlerini blok içinde kullanma örneği
+    Burada html etiketleri kullanmak işe yaramaz yani yine tarayıcı tarafından yorumlanır.
+{% endverbatim block %}
+
+
+</body>
+</html>

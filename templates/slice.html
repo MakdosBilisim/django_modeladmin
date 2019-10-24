@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>slice</title>
+</head>
+<body>
+
+# slice ile listenini belirli bölümleri kullanılabilir.
+
+{% verbatim %}
+{% for k in kullanicilar|slice:"2" %}
+{{ k.isim }}
+{% endfor %}
+{% endverbatim %}
+
+{% for k in kullanicilar|slice:"2" %}
+    {{ k.isim }}
+{% endfor %}
+
+
+{% verbatim %}
+{% for k in kullanicilar|slice:"2:5" %}
+{{ k.isim }}
+{% endfor %}
+{% endverbatim %}
+
+{% for k in kullanicilar|slice:"2:5" %}
+    {{ k.isim }}
+{% endfor %}
+
+
+</body>
+</html>

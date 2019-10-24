@@ -1,0 +1,17 @@
+{% load humanize %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>naturalday</title>
+</head>
+<body>
+
+# Verilen tarih değişkeninin "dün, bugün ve yarın" olarak döndürür.
+
+{% for l in kullanicilar %}
+    {{ l.islemtarih|naturalday }} {{ l.toplantitarih|naturalday }}
+{% endfor %}
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>center</title>
+</head>
+<body>
+
+# Değişkenin karakter sayısını istenilen genişliğin değerinden çıkarıp ortalar.
+# burayı ortala = 13 karakter. 15-13=2 sağdan ve soldan 1 er karakter ekler
+# Genişlik ile değişken sayısı arasındaki fark tek sayı ise soldan 1 fazla boşluk ekler
+
+"{{ 'burayı ortala'|center:16 }}"
+
+
+{% for k in kullanicilar %}
+    --{{ k.isim|center:20 }}--
+{% endfor %}
+
+
+
+</body>
+</html>

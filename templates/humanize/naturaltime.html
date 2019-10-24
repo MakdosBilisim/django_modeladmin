@@ -1,0 +1,17 @@
+{% load humanize %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>naturaltime</title>
+</head>
+<body>
+
+# Verilen tarih değişkeninin yıl, ay, hafta, gün, saat, dakika olarak kalan ve geçen süresini metin olarak yazar
+
+{% for l in kullanicilar %}
+   islemtarih: {{ l.islemtarih|naturaltime }} -- toplantitarih: {{ l.toplantitarih|naturaltime }}
+{% endfor %}
+
+</body>
+</html>

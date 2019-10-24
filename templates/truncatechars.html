@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>truncatechars</title>
+</head>
+<body>
+
+# Değişkenin karakterlerinin istenilen sayı kadar gösterilmesini sağlar.
+# Değişkenin karakter sayısından 3 (... için) çıkarılır.
+# Örn: Değişkenin karakter sayısı 10 dan fazla ise ve 5 karakteri gösterilmek istenirse truncatechars:8 olmalı
+
+{% for k in kullanicilar %}
+    {{ k.soyisim|truncatechars:8 }}
+{% endfor %}
+
+
+</body>
+</html>

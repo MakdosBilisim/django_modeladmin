@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>slugify</title>
+</head>
+<body>
+
+# Temiz URL için:
+Tüm karakterleri ASCII'ye dönüştürür.
+Tüm karakterleri küçük harfe dönüştürür.
+Baştaki ve sondaki boşlukları siler.
+Boşlukları tirelere dönüştürür.
+Alfanümerik olmayan (_?=)(/&%+^'!) karakterleri kaldırır.
+
+#Çoklu alan çevirmek için araya - ekleyerek kullanılabilir
+
+
+{{ "muslu yüksektepe"|slugify }}
+
+{{ "a_?=)(/&%+^'!z abcç türkçe karakter"|slugify }}
+
+{% for k in kullanicilar %}
+    {{ k.isim|slugify }}-{{ k.soyisim|slugify }}
+{% endfor %}
+
+
+</body>
+</html>

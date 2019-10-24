@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cycle</title>
+    <style>
+        table, tr {
+            width: 100%;
+            border: 1px solid black;
+        }
+
+        .stil1 {
+            background: #c82425;
+        }
+
+        .stil2 {
+            background: #123456;
+        }
+    </style>
+</head>
+<body>
+
+# Döngünün her sırası için özel durum tanımlama
+# Örnekte tablo satırına stil uygulandı
+<table>
+    {% for eleman in "abcd12345" %}
+        <tr>
+            <td class="{% cycle 'stil1' 'stil2' 'stil3' as anlikDeger %}">{{ anlikDeger }} --> {{ eleman }} {% if anlikDeger == 'stil3' %}STIL3{% endif %}</td>
+        </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>safeseq</title>
+</head>
+<body>
+
+# Listedeki tüm elemanlara safe etiketi uygular.
+# safe sonrası tekrar filtre uygulanacaksa kullanılabilir
+
+{{ kullanicilar|safeseq|join:", " }}
+
+
+{% for k in kullanicilar %}
+    {{ k.isim|safeseq }}
+
+    {% for kk in k.isim|safeseq %}
+        {{ kk }}
+    {% endfor %}
+
+    {{ k.isim|safeseq|join:", " }}
+{% endfor %}
+
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>timesince</title>
+</head>
+<body>
+
+# Verilen tarih ile geçen süre
+# Parametre yazılmaz ise şimdiki zamandan çıkarır
+
+{% for k in kullanicilar %}
+    {{ k.islemtarih|timesince }} geçti
+{#    {{ k.islemtarih|timesince|guncelleme_tarihi }}#}
+{% endfor %}
+
+
+
+</body>
+</html>

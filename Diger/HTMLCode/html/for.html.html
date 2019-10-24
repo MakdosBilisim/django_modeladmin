@@ -1,0 +1,133 @@
+<html>
+<head>
+<title>for.html</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #333333;}
+.s1 { color: #795da3;}
+.s2 { color: #63a35c;}
+.s3 { color: #183691; font-weight: bold;}
+.s4 { color: #333333; font-weight: bold;}
+.s5 { color: #63a35c;}
+.s6 { color: #333333;}
+.s7 { color: #795da3;}
+.s8 { color: #a71d5d;}
+.s9 { color: #183691;}
+.s10 { color: #0086b3;}
+.ln { color: #333333; font-weight: normal; font-style: normal; }
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+for.html</font>
+</center></td></tr></table>
+<pre><a name="l1"><span class="ln">1    </span></a><span class="s0">&lt;!DOCTYPE </span><span class="s1">html</span><span class="s0">&gt;</span>
+<a name="l2"><span class="ln">2    </span></a>&lt;<span class="s2">html </span><span class="s1">lang=</span><span class="s3">&quot;en&quot;</span><span class="s0">&gt;</span>
+<a name="l3"><span class="ln">3    </span></a>&lt;<span class="s2">head</span><span class="s0">&gt;</span>
+<a name="l4"><span class="ln">4    </span></a>    &lt;<span class="s2">meta </span><span class="s1">charset=</span><span class="s3">&quot;UTF-8&quot;</span><span class="s0">&gt;</span>
+<a name="l5"><span class="ln">5    </span></a>    &lt;<span class="s2">title</span><span class="s0">&gt;</span><span class="s4">for</span><span class="s0">&lt;/</span><span class="s2">title</span><span class="s0">&gt;</span>
+<a name="l6"><span class="ln">6    </span></a>&lt;/<span class="s2">head</span><span class="s0">&gt;</span>
+<a name="l7"><span class="ln">7    </span></a>&lt;<span class="s2">body</span><span class="s0">&gt;</span>
+<a name="l8"><span class="ln">8    </span></a>
+<a name="l9"><span class="ln">9    </span></a><span class="s4"># liste, string ve sözlük(dict)ler için döngü sağlar.</span>
+<a name="l10"><span class="ln">10   </span></a># sıralama yaptırılabilir
+<a name="l11"><span class="ln">11   </span></a># kayıt yoksa bilgi verilir
+<a name="l12"><span class="ln">12   </span></a># döngü sırası hakkında bilgi alınıp işlem yapılabilir.
+<a name="l13"><span class="ln">13   </span></a>
+<a name="l14"><span class="ln">14   </span></a><span class="s0">&lt;</span><span class="s2">ul</span><span class="s0">&gt;</span>
+<a name="l15"><span class="ln">15   </span></a>    <span class="s5">{% for </span><span class="s7">deger </span><span class="s8">in </span><span class="s9">&quot;abcçde&quot; </span><span class="s7">reversed </span><span class="s5">%}</span>
+<a name="l16"><span class="ln">16   </span></a>        <span class="s0">&lt;</span><span class="s2">li</span><span class="s0">&gt;</span><span class="s6">{{ </span><span class="s7">deger </span><span class="s6">}}</span><span class="s0">&lt;/</span><span class="s2">li</span><span class="s0">&gt;</span>
+<a name="l17"><span class="ln">17   </span></a>    <span class="s5">{% endfor %}</span>
+<a name="l18"><span class="ln">18   </span></a><span class="s0">&lt;/</span><span class="s2">ul</span><span class="s0">&gt;</span>
+<a name="l19"><span class="ln">19   </span></a>&lt;<span class="s2">hr</span><span class="s0">&gt;</span>
+<a name="l20"><span class="ln">20   </span></a>&lt;<span class="s2">ul</span><span class="s0">&gt;</span>
+<a name="l21"><span class="ln">21   </span></a>    <span class="s5">{% for </span><span class="s7">deger </span><span class="s8">in </span><span class="s9">&quot;12345abc&quot; </span><span class="s5">%}</span>
+<a name="l22"><span class="ln">22   </span></a>        <span class="s0">&lt;</span><span class="s2">li</span><span class="s0">&gt;</span><span class="s6">{{ </span><span class="s7">deger </span><span class="s6">}}</span><span class="s0">&lt;/</span><span class="s2">li</span><span class="s0">&gt;</span>
+<a name="l23"><span class="ln">23   </span></a>    <span class="s5">{% endfor %}</span>
+<a name="l24"><span class="ln">24   </span></a><span class="s0">&lt;/</span><span class="s2">ul</span><span class="s0">&gt;</span>
+<a name="l25"><span class="ln">25   </span></a>&lt;<span class="s2">hr</span><span class="s0">&gt;</span>
+<a name="l26"><span class="ln">26   </span></a>&lt;<span class="s2">h2</span><span class="s0">&gt;</span><span class="s4">Kayıt sayısı : </span><span class="s6">{{ </span><span class="s7">kullanici_listesi</span><span class="s10">|</span><span class="s7">length </span><span class="s6">}}</span><span class="s0">&lt;/</span><span class="s2">h2</span><span class="s0">&gt;</span>
+<a name="l27"><span class="ln">27   </span></a>
+<a name="l28"><span class="ln">28   </span></a>&lt;<span class="s2">ul</span><span class="s0">&gt;</span>
+<a name="l29"><span class="ln">29   </span></a>    <span class="s4"># isim alanına göre 1-9 a-z</span>
+<a name="l30"><span class="ln">30   </span></a>    <span class="s5">{% for </span><span class="s7">kullanici </span><span class="s8">in </span><span class="s7">kullanici_listesi</span><span class="s10">|</span><span class="s7">dictsort</span><span class="s6">:</span><span class="s9">'isim' </span><span class="s5">%}</span>
+<a name="l31"><span class="ln">31   </span></a>        <span class="s0">&lt;</span><span class="s2">li</span><span class="s0">&gt;</span><span class="s6">{{ </span><span class="s7">kullanici</span><span class="s6">.</span><span class="s7">isim </span><span class="s6">}}</span><span class="s0">&lt;/</span><span class="s2">li</span><span class="s0">&gt;</span>
+<a name="l32"><span class="ln">32   </span></a>    <span class="s5">{% endfor %}</span>
+<a name="l33"><span class="ln">33   </span></a>    <span class="s4"># isim alanına göre z-a 9-1</span>
+<a name="l34"><span class="ln">34   </span></a>    <span class="s5">{% for </span><span class="s7">kullanici </span><span class="s8">in </span><span class="s7">kullanici_listesi</span><span class="s10">|</span><span class="s7">dictsortreversed</span><span class="s6">:</span><span class="s9">'soyisim' </span><span class="s5">%}</span>
+<a name="l35"><span class="ln">35   </span></a>        <span class="s0">&lt;</span><span class="s2">li</span><span class="s0">&gt;</span><span class="s6">{{ </span><span class="s7">kullanici</span><span class="s6">.</span><span class="s7">soyisim </span><span class="s6">}}</span><span class="s0">&lt;/</span><span class="s2">li</span><span class="s0">&gt;</span>
+<a name="l36"><span class="ln">36   </span></a>    <span class="s5">{% endfor %}</span>
+<a name="l37"><span class="ln">37   </span></a>    <span class="s0">&lt;</span><span class="s2">hr</span><span class="s0">&gt;</span>
+<a name="l38"><span class="ln">38   </span></a>    <span class="s5">{% for </span><span class="s7">kullanici </span><span class="s8">in </span><span class="s7">kullanici_listesi </span><span class="s5">%}</span>
+<a name="l39"><span class="ln">39   </span></a>        <span class="s0">&lt;</span><span class="s2">li</span><span class="s0">&gt;</span><span class="s6">{{ </span><span class="s7">kullanici </span><span class="s6">}} </span><span class="s4">--&gt; __str__ den dönen bilgiler yazılır</span><span class="s0">&lt;/</span><span class="s2">li</span><span class="s0">&gt;</span>
+<a name="l40"><span class="ln">40   </span></a>    <span class="s5">{% endfor %}</span>
+<a name="l41"><span class="ln">41   </span></a>
+<a name="l42"><span class="ln">42   </span></a>    <span class="s0">&lt;</span><span class="s2">hr</span><span class="s0">&gt;</span>
+<a name="l43"><span class="ln">43   </span></a>    <span class="s5">{% for </span><span class="s7">kullanici </span><span class="s8">in </span><span class="s7">kullanici_listesi </span><span class="s5">%}</span>
+<a name="l44"><span class="ln">44   </span></a>        <span class="s0">&lt;</span><span class="s2">li</span><span class="s0">&gt;</span><span class="s6">{{ </span><span class="s7">kullanici</span><span class="s6">.</span><span class="s7">isim </span><span class="s6">}} </span><span class="s4">--&gt; sadece modelki (db tablodaki) isim alanı yazılır</span><span class="s0">&lt;/</span><span class="s2">li</span><span class="s0">&gt;</span>
+<a name="l45"><span class="ln">45   </span></a>    <span class="s5">{% endfor %}</span>
+<a name="l46"><span class="ln">46   </span></a>
+<a name="l47"><span class="ln">47   </span></a>    <span class="s0">&lt;</span><span class="s2">hr</span><span class="s0">&gt;</span>
+<a name="l48"><span class="ln">48   </span></a>
+<a name="l49"><span class="ln">49   </span></a>    <span class="s4">İlk 3 kaydı göster</span>
+<a name="l50"><span class="ln">50   </span></a>    <span class="s5">{% for </span><span class="s7">kullanici </span><span class="s8">in </span><span class="s7">kullanici_listesi</span><span class="s10">|</span><span class="s7">slice</span><span class="s6">:</span><span class="s9">&quot;3&quot; </span><span class="s5">%}</span>
+<a name="l51"><span class="ln">51   </span></a>        <span class="s0">&lt;</span><span class="s2">li</span><span class="s0">&gt;</span><span class="s6">{{ </span><span class="s7">kullanici</span><span class="s6">.</span><span class="s7">isim </span><span class="s6">}}</span><span class="s0">&lt;/</span><span class="s2">li</span><span class="s0">&gt;</span>
+<a name="l52"><span class="ln">52   </span></a>    <span class="s5">{% endfor %}</span>
+<a name="l53"><span class="ln">53   </span></a>
+<a name="l54"><span class="ln">54   </span></a>    <span class="s4">Son 3 kaydı göster</span>
+<a name="l55"><span class="ln">55   </span></a>    <span class="s5">{% for </span><span class="s7">kullanici </span><span class="s8">in </span><span class="s7">kullanici_listesi</span><span class="s10">|</span><span class="s7">dictsortreversed</span><span class="s6">:</span><span class="s9">'id'</span><span class="s10">|</span><span class="s7">slice</span><span class="s6">:</span><span class="s9">&quot;:3&quot; </span><span class="s5">%}</span>
+<a name="l56"><span class="ln">56   </span></a>        <span class="s0">&lt;</span><span class="s2">li</span><span class="s0">&gt;</span><span class="s6">{{ </span><span class="s7">kullanici</span><span class="s6">.</span><span class="s7">isim </span><span class="s6">}}</span><span class="s0">&lt;/</span><span class="s2">li</span><span class="s0">&gt;</span>
+<a name="l57"><span class="ln">57   </span></a>    <span class="s5">{% endfor %}</span>
+<a name="l58"><span class="ln">58   </span></a>
+<a name="l59"><span class="ln">59   </span></a><span class="s0">&lt;/</span><span class="s2">ul</span><span class="s0">&gt;</span>
+<a name="l60"><span class="ln">60   </span></a>
+<a name="l61"><span class="ln">61   </span></a>&lt;<span class="s2">ul</span><span class="s0">&gt;</span>
+<a name="l62"><span class="ln">62   </span></a>
+<a name="l63"><span class="ln">63   </span></a>    <span class="s5">{% for </span><span class="s7">kullanici </span><span class="s8">in </span><span class="s7">kullanici_listesi </span><span class="s5">%}</span>
+<a name="l64"><span class="ln">64   </span></a>        <span class="s0">&lt;</span><span class="s2">li</span><span class="s0">&gt;</span><span class="s6">{{ </span><span class="s7">forloop</span><span class="s6">.</span><span class="s7">counter </span><span class="s6">}} </span><span class="s4">-&gt; </span><span class="s6">{{ </span><span class="s7">kullanici</span><span class="s6">.</span><span class="s7">isim </span><span class="s6">}} </span><span class="s4">- counter - Döngünün 1 den başlayarak kayıt sırası</span><span class="s0">&lt;/</span><span class="s2">li</span><span class="s0">&gt;</span>
+<a name="l65"><span class="ln">65   </span></a>        &lt;<span class="s2">li</span><span class="s0">&gt;</span><span class="s6">{{ </span><span class="s7">forloop</span><span class="s6">.</span><span class="s7">counter0 </span><span class="s6">}} </span><span class="s4">-&gt; </span><span class="s6">{{ </span><span class="s7">kullanici</span><span class="s6">.</span><span class="s7">isim </span><span class="s6">}} </span><span class="s4">counter0- Döngünün 0 den başlayarak kayıt sırası</span><span class="s0">&lt;/</span><span class="s2">li</span><span class="s0">&gt;</span>
+<a name="l66"><span class="ln">66   </span></a>        &lt;<span class="s2">li</span><span class="s0">&gt;</span><span class="s6">{{ </span><span class="s7">forloop</span><span class="s6">.</span><span class="s7">revcounter </span><span class="s6">}} </span><span class="s4">-&gt; </span><span class="s6">{{ </span><span class="s7">kullanici</span><span class="s6">.</span><span class="s7">isim </span><span class="s6">}} </span><span class="s4">- revcounter - Döngünün sonundan itibaren 1 den başlayarak kayıt sayısı</span><span class="s0">&lt;/</span><span class="s2">li</span><span class="s0">&gt;</span>
+<a name="l67"><span class="ln">67   </span></a>        &lt;<span class="s2">li</span><span class="s0">&gt;</span><span class="s6">{{ </span><span class="s7">forloop</span><span class="s6">.</span><span class="s7">revcounter0 </span><span class="s6">}} </span><span class="s4">-&gt; </span><span class="s6">{{ </span><span class="s7">kullanici</span><span class="s6">.</span><span class="s7">isim </span><span class="s6">}} </span><span class="s4">- revcounter0 - Döngünün sonundan itibaren 0 den başlayarak kayıt sayısı/li&gt;</span>
+<a name="l68"><span class="ln">68   </span></a>        <span class="s0">&lt;</span><span class="s2">li</span><span class="s0">&gt;</span><span class="s6">{{ </span><span class="s7">forloop</span><span class="s6">.</span><span class="s7">first </span><span class="s6">}} </span><span class="s4">-&gt; </span><span class="s6">{{ </span><span class="s7">kullanici</span><span class="s6">.</span><span class="s7">isim </span><span class="s6">}} </span><span class="s4">- first - Döngüdeki ilk kayıt mı? True ya da False</span><span class="s0">&lt;/</span><span class="s2">li</span><span class="s0">&gt;</span>
+<a name="l69"><span class="ln">69   </span></a>        &lt;<span class="s2">li</span><span class="s0">&gt;</span><span class="s6">{{ </span><span class="s7">forloop</span><span class="s6">.</span><span class="s7">last </span><span class="s6">}} </span><span class="s4">-&gt; </span><span class="s6">{{ </span><span class="s7">kullanici</span><span class="s6">.</span><span class="s7">isim </span><span class="s6">}} </span><span class="s4">- last - Döngüdeki son kayıt mı? True ya da False</span><span class="s0">&lt;/</span><span class="s2">li</span><span class="s0">&gt;</span>
+<a name="l70"><span class="ln">70   </span></a>        &lt;<span class="s2">hr</span><span class="s0">&gt;</span>
+<a name="l71"><span class="ln">71   </span></a>    <span class="s5">{% endfor %}</span>
+<a name="l72"><span class="ln">72   </span></a>
+<a name="l73"><span class="ln">73   </span></a>    {% for <span class="s7">k </span><span class="s8">in </span><span class="s9">&quot;123&quot; </span><span class="s5">%}</span>
+<a name="l74"><span class="ln">74   </span></a>        {% for <span class="s7">kullanici </span><span class="s8">in </span><span class="s7">kullanici_listesi </span><span class="s5">%}</span>
+<a name="l75"><span class="ln">75   </span></a>            <span class="s0">&lt;</span><span class="s2">li</span><span class="s0">&gt;</span><span class="s6">{{ </span><span class="s7">forloop</span><span class="s6">.</span><span class="s7">parentloop </span><span class="s6">}} </span><span class="s4">Üst döngünün ilk kaydı mı? </span><span class="s6">{{ </span><span class="s7">forloop</span><span class="s6">.</span><span class="s7">parentloop</span><span class="s6">.</span><span class="s7">first </span><span class="s6">}} </span><span class="s4">Üst Döngünün son kaydı mı? </span><span class="s6">{{ </span><span class="s7">forloop</span><span class="s6">.</span><span class="s7">parentloop</span><span class="s6">.</span><span class="s7">last </span><span class="s6">}} </span><span class="s4">-&gt; </span><span class="s6">{{ </span><span class="s7">kullanici</span><span class="s6">.</span><span class="s7">isim </span><span class="s6">}} </span><span class="s4">- parentloop</span><span class="s0">&lt;/</span><span class="s2">li</span><span class="s0">&gt;</span>
+<a name="l76"><span class="ln">76   </span></a>            &lt;<span class="s2">hr</span><span class="s0">&gt;</span>
+<a name="l77"><span class="ln">77   </span></a>        <span class="s5">{% endfor %}</span>
+<a name="l78"><span class="ln">78   </span></a>    {% endfor %}
+<a name="l79"><span class="ln">79   </span></a>
+<a name="l80"><span class="ln">80   </span></a><span class="s0">&lt;/</span><span class="s2">ul</span><span class="s0">&gt;</span>
+<a name="l81"><span class="ln">81   </span></a>&lt;<span class="s2">hr</span><span class="s0">&gt;</span>
+<a name="l82"><span class="ln">82   </span></a>&lt;<span class="s2">ul</span><span class="s0">&gt;</span>
+<a name="l83"><span class="ln">83   </span></a>    <span class="s5">{% for </span><span class="s7">kullanici </span><span class="s8">in </span><span class="s7">bos_kullanici_listesi </span><span class="s5">%}</span>
+<a name="l84"><span class="ln">84   </span></a>        <span class="s0">&lt;</span><span class="s2">li</span><span class="s0">&gt;</span><span class="s6">{{ </span><span class="s7">kullanici </span><span class="s6">}}</span><span class="s0">&lt;/</span><span class="s2">li</span><span class="s0">&gt;</span>
+<a name="l85"><span class="ln">85   </span></a>    <span class="s5">{% empty %}</span>
+<a name="l86"><span class="ln">86   </span></a>        <span class="s0">&lt;</span><span class="s2">li</span><span class="s0">&gt;</span><span class="s4">İsmi &quot;yok&quot; ile biten hiç kayıt bulunamadı!</span><span class="s0">&lt;/</span><span class="s2">li</span><span class="s0">&gt;</span>
+<a name="l87"><span class="ln">87   </span></a>    <span class="s5">{% endfor %}</span>
+<a name="l88"><span class="ln">88   </span></a><span class="s0">&lt;/</span><span class="s2">ul</span><span class="s0">&gt;</span>
+<a name="l89"><span class="ln">89   </span></a>&lt;<span class="s2">hr</span><span class="s0">&gt;</span>
+<a name="l90"><span class="ln">90   </span></a>&lt;<span class="s2">ul</span><span class="s0">&gt;</span>
+<a name="l91"><span class="ln">91   </span></a>    <span class="s5">{% for </span><span class="s7">value </span><span class="s8">in </span><span class="s7">ornek_dict</span><span class="s6">.</span><span class="s7">values </span><span class="s5">%}</span>
+<a name="l92"><span class="ln">92   </span></a>        <span class="s0">&lt;</span><span class="s2">li</span><span class="s0">&gt;</span><span class="s6">{{ </span><span class="s7">value </span><span class="s6">}}</span><span class="s0">&lt;/</span><span class="s2">li</span><span class="s0">&gt;</span>
+<a name="l93"><span class="ln">93   </span></a>    <span class="s5">{% endfor %}</span>
+<a name="l94"><span class="ln">94   </span></a>    {% for <span class="s7">key </span><span class="s8">in </span><span class="s7">ornek_dict</span><span class="s6">.</span><span class="s7">keys </span><span class="s5">%}</span>
+<a name="l95"><span class="ln">95   </span></a>        <span class="s0">&lt;</span><span class="s2">li</span><span class="s0">&gt;</span><span class="s6">{{ </span><span class="s7">key </span><span class="s6">}}</span><span class="s0">&lt;/</span><span class="s2">li</span><span class="s0">&gt;</span>
+<a name="l96"><span class="ln">96   </span></a>    <span class="s5">{% endfor %}</span>
+<a name="l97"><span class="ln">97   </span></a><span class="s0">&lt;/</span><span class="s2">ul</span><span class="s0">&gt;</span>
+<a name="l98"><span class="ln">98   </span></a>&lt;<span class="s2">hr</span><span class="s0">&gt;</span>
+<a name="l99"><span class="ln">99   </span></a>&lt;<span class="s2">ul</span><span class="s0">&gt;</span>
+<a name="l100"><span class="ln">100  </span></a>    <span class="s5">{% for </span><span class="s7">key</span><span class="s6">, </span><span class="s7">value </span><span class="s8">in </span><span class="s7">ornek_dict</span><span class="s6">.</span><span class="s7">items </span><span class="s5">%}</span>
+<a name="l101"><span class="ln">101  </span></a>        <span class="s0">&lt;</span><span class="s2">li</span><span class="s0">&gt;</span><span class="s6">{{ </span><span class="s7">key </span><span class="s6">}}</span><span class="s4">: </span><span class="s6">{{ </span><span class="s7">value </span><span class="s6">}}</span><span class="s0">&lt;/</span><span class="s2">li</span><span class="s0">&gt;</span>
+<a name="l102"><span class="ln">102  </span></a>    <span class="s5">{% endfor %}</span>
+<a name="l103"><span class="ln">103  </span></a><span class="s0">&lt;/</span><span class="s2">ul</span><span class="s0">&gt;</span>
+<a name="l104"><span class="ln">104  </span></a>
+<a name="l105"><span class="ln">105  </span></a>&lt;/<span class="s2">body</span><span class="s0">&gt;</span>
+<a name="l106"><span class="ln">106  </span></a>&lt;/<span class="s2">html</span><span class="s0">&gt;</span></pre>
+</body>
+</html>

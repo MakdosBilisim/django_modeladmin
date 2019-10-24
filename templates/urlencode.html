@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>urlencode</title>
+</head>
+<body>
+
+# Değişkenin içeriğindeki URL karakterlerini encode ederek güvenli hale getirir.
+# :"" kullanılarak / karakterleri de encode edilebilir.
+# https://katoptrik.com/decode-encode/
+
+{{ "https://makdos.biz/?a=2&c=1"|urlencode }}
+
+{{ "https://makdos.biz/?a=2&c=1"|urlencode:"" }}
+
+</body>
+</html>

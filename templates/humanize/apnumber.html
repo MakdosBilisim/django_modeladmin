@@ -1,0 +1,18 @@
+{% load humanize %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>apnumber</title>
+</head>
+<body>
+
+# 1-9 arası rakamların okunuşunu yazar
+#settings.py LANGUAGE_CODE önemli
+
+{{ 1|apnumber }}
+{{ 7|apnumber }}
+{{ 10|apnumber }}
+
+</body>
+</html>

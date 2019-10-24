@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>floatformat</title>
+</head>
+<body>
+
+# Ondalık basamak kısmını (decimal place) yuvarlama veya tamamlama
+
+{% verbatim %}{{ 34.35|floatformat }}{% endverbatim %} : {{ 34.35|floatformat }}
+{% verbatim %}{{ 34.00|floatformat }}{% endverbatim %} : {{ 34.00|floatformat }}
+{% verbatim %}{{ 34|floatformat }}{% endverbatim %} : {{ 34|floatformat }}
+{% verbatim %}{{ 34.13|floatformat }}{% endverbatim %} : {{ 34.13|floatformat }}
+
+
+# Virgülden sonraki 3 basamağa göre
+{% verbatim %}{{ 34.5267852|floatformat:3 }}{% endverbatim %} : {{ 34.5267852|floatformat:3 }}
+{% verbatim %}{{ 34.138559|floatformat:3 }}{% endverbatim %} : {{ 34.138559|floatformat:3 }}
+
+
+# 0 eklenirse en yakın sayıya tamamlar
+{% verbatim %}{{ 34.35|floatformat:"0" }}{% endverbatim %} : {{ 34.35|floatformat:"0" }}
+{% verbatim %}{{ 34.96|floatformat:"0" }}{% endverbatim %} : {{ 34.96|floatformat:"0" }}
+{% verbatim %}{{ 34.50|floatformat:"0" }}{% endverbatim %} : {{ 34.50|floatformat:"0" }}
+{% verbatim %}{{ 34.49|floatformat:"0" }}{% endverbatim %} : {{ 34.49|floatformat:"0" }}
+
+
+</body>
+</html>

@@ -1,0 +1,135 @@
+<html>
+<head>
+<title>tabular.html</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #63a35c;}
+.s1 { color: #333333;}
+.s2 { color: #795da3;}
+.s3 { color: #333333;}
+.s4 { color: #63a35c;}
+.s5 { color: #0086b3;}
+.s6 { color: #008000; font-weight: bold;}
+.s7 { color: #a71d5d;}
+.s8 { color: #795da3;}
+.s9 { color: #183691; font-weight: bold;}
+.s10 { color: #0086b3;}
+.s11 { color: #a71d5d;}
+.s12 { color: #000000; font-weight: bold;}
+.s13 { color: #183691;}
+.ln { color: #333333; font-weight: normal; font-style: normal; }
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+tabular.html</font>
+</center></td></tr></table>
+<pre><a name="l1"><span class="ln">1    </span></a><span class="s0">{% load </span><span class="s2">i18n admin_urls static admin_modify </span><span class="s0">%}</span>
+<a name="l2"><span class="ln">2    </span></a>    <span class="s3">&lt;</span><span class="s4">style</span><span class="s3">&gt;</span>
+<a name="l3"><span class="ln">3    </span></a>        <span class="s4">table {</span>
+<a name="l4"><span class="ln">4    </span></a>            <span class="s5">border-collapse</span><span class="s3">: </span><span class="s6">collapse</span><span class="s4">;</span>
+<a name="l5"><span class="ln">5    </span></a>            <span class="s5">width</span><span class="s3">: </span><span class="s5">100</span><span class="s7">%</span><span class="s4">;</span>
+<a name="l6"><span class="ln">6    </span></a>        }
+<a name="l7"><span class="ln">7    </span></a>
+<a name="l8"><span class="ln">8    </span></a>        thead th {
+<a name="l9"><span class="ln">9    </span></a>            <span class="s5">padding</span><span class="s3">: </span><span class="s5">8</span><span class="s6">px</span><span class="s4">;</span>
+<a name="l10"><span class="ln">10   </span></a>            <span class="s5">text-align</span><span class="s3">: </span><span class="s6">left</span><span class="s4">;</span>
+<a name="l11"><span class="ln">11   </span></a>            <span class="s5">background-color</span><span class="s3">:  </span><span class="s4">#c82425;</span>
+<a name="l12"><span class="ln">12   </span></a>        }
+<a name="l13"><span class="ln">13   </span></a>        td {
+<a name="l14"><span class="ln">14   </span></a>            <span class="s5">padding</span><span class="s3">: </span><span class="s5">8</span><span class="s6">px</span><span class="s4">;</span>
+<a name="l15"><span class="ln">15   </span></a>            <span class="s5">text-align</span><span class="s3">: </span><span class="s6">left</span><span class="s4">;</span>
+<a name="l16"><span class="ln">16   </span></a>        }
+<a name="l17"><span class="ln">17   </span></a>
+<a name="l18"><span class="ln">18   </span></a>        tr<span class="s3">:</span><span class="s4">hover {</span>
+<a name="l19"><span class="ln">19   </span></a>            <span class="s5">background-color</span><span class="s3">: </span><span class="s4">#676767;</span>
+<a name="l20"><span class="ln">20   </span></a>        }
+<a name="l21"><span class="ln">21   </span></a>
+<a name="l22"><span class="ln">22   </span></a>        tr<span class="s3">:</span><span class="s4">nth-child(even) {</span>
+<a name="l23"><span class="ln">23   </span></a>            <span class="s5">background-color</span><span class="s3">: </span><span class="s4">#f2f2f2;</span>
+<a name="l24"><span class="ln">24   </span></a>        }
+<a name="l25"><span class="ln">25   </span></a>    <span class="s3">&lt;/</span><span class="s4">style</span><span class="s3">&gt;</span>
+<a name="l26"><span class="ln">26   </span></a>&lt;<span class="s4">div </span><span class="s8">class=</span><span class="s9">&quot;js-inline-admin-formset inline-group&quot; </span><span class="s8">id=</span><span class="s9">&quot;</span><span class="s1">{{ </span><span class="s2">inline_admin_formset</span><span class="s1">.</span><span class="s2">formset</span><span class="s1">.</span><span class="s2">prefix </span><span class="s1">}}</span><span class="s9">-group&quot;</span>
+<a name="l27"><span class="ln">27   </span></a>     <span class="s8">data-inline-type=</span><span class="s9">&quot;tabular&quot;</span>
+<a name="l28"><span class="ln">28   </span></a>     <span class="s8">data-inline-formset=</span><span class="s9">&quot;</span><span class="s1">{{ </span><span class="s2">inline_admin_formset</span><span class="s1">.</span><span class="s2">inline_formset_data </span><span class="s1">}}</span><span class="s9">&quot;</span><span class="s3">&gt;</span>
+<a name="l29"><span class="ln">29   </span></a>    &lt;<span class="s4">div </span><span class="s8">class=</span><span class="s9">&quot;tabular inline-related </span><span class="s0">{% if </span><span class="s2">forloop</span><span class="s1">.</span><span class="s2">last </span><span class="s0">%}</span><span class="s9">last-related</span><span class="s0">{% endif %}</span><span class="s9">&quot;</span><span class="s3">&gt;</span>
+<a name="l30"><span class="ln">30   </span></a>        <span class="s1">{{ </span><span class="s2">inline_admin_formset</span><span class="s1">.</span><span class="s2">formset</span><span class="s1">.</span><span class="s2">management_form </span><span class="s1">}}</span>
+<a name="l31"><span class="ln">31   </span></a>        <span class="s3">&lt;</span><span class="s4">fieldset </span><span class="s8">class=</span><span class="s9">&quot;module </span><span class="s1">{{ </span><span class="s2">inline_admin_formset</span><span class="s1">.</span><span class="s2">classes </span><span class="s1">}}</span><span class="s9">&quot;</span><span class="s3">&gt;</span>
+<a name="l32"><span class="ln">32   </span></a>            &lt;<span class="s4">h2</span><span class="s3">&gt;</span><span class="s1">{{ </span><span class="s2">inline_admin_formset</span><span class="s1">.</span><span class="s2">opts</span><span class="s1">.</span><span class="s2">verbose_name_plural</span><span class="s10">|</span><span class="s2">capfirst </span><span class="s1">}}</span><span class="s3">&lt;/</span><span class="s4">h2</span><span class="s3">&gt;</span>
+<a name="l33"><span class="ln">33   </span></a>            <span class="s1">{{ </span><span class="s2">inline_admin_formset</span><span class="s1">.</span><span class="s2">formset</span><span class="s1">.</span><span class="s2">non_form_errors </span><span class="s1">}}</span>
+<a name="l34"><span class="ln">34   </span></a>            <span class="s3">&lt;</span><span class="s4">table</span><span class="s3">&gt;</span>
+<a name="l35"><span class="ln">35   </span></a>                &lt;<span class="s4">thead</span><span class="s3">&gt;</span>
+<a name="l36"><span class="ln">36   </span></a>                &lt;<span class="s4">tr</span><span class="s3">&gt;</span>
+<a name="l37"><span class="ln">37   </span></a>                    &lt;<span class="s4">th </span><span class="s8">class=</span><span class="s9">&quot;original&quot;</span><span class="s3">&gt;&lt;/</span><span class="s4">th</span><span class="s3">&gt;</span>
+<a name="l38"><span class="ln">38   </span></a>                    <span class="s0">{% for </span><span class="s2">field </span><span class="s11">in </span><span class="s2">inline_admin_formset</span><span class="s1">.</span><span class="s2">fields </span><span class="s0">%}</span>
+<a name="l39"><span class="ln">39   </span></a>                        {% if <span class="s11">not </span><span class="s2">field</span><span class="s1">.</span><span class="s2">widget</span><span class="s1">.</span><span class="s2">is_hidden </span><span class="s0">%}</span>
+<a name="l40"><span class="ln">40   </span></a>                            <span class="s3">&lt;</span><span class="s4">th</span><span class="s0">{% if </span><span class="s2">field</span><span class="s1">.</span><span class="s2">required </span><span class="s0">%} </span><span class="s8">class=</span><span class="s9">&quot;required&quot;</span><span class="s0">{% endif %}</span><span class="s3">&gt;</span><span class="s1">{{ </span><span class="s2">field</span><span class="s1">.</span><span class="s2">label</span><span class="s10">|</span><span class="s2">capfirst </span><span class="s1">}}</span>
+<a name="l41"><span class="ln">41   </span></a>                                <span class="s0">{% if </span><span class="s2">field</span><span class="s1">.</span><span class="s2">help_text </span><span class="s0">%}</span><span class="s12">&amp;nbsp;</span><span class="s3">&lt;</span><span class="s4">img </span><span class="s8">src=</span><span class="s9">&quot;</span><span class="s0">{% static </span><span class="s13">&quot;admin/img/icon-unknown.svg&quot; </span><span class="s0">%}</span><span class="s9">&quot; </span><span class="s8">class=</span><span class="s9">&quot;help help-tooltip&quot; </span><span class="s8">width=</span><span class="s9">&quot;10&quot; </span><span class="s8">height=</span><span class="s9">&quot;10&quot; </span><span class="s8">alt=</span><span class="s9">&quot;(</span><span class="s1">{{ </span><span class="s2">field</span><span class="s1">.</span><span class="s2">help_text</span><span class="s10">|</span><span class="s2">striptags </span><span class="s1">}}</span><span class="s9">)&quot; </span><span class="s8">title=</span><span class="s9">&quot;</span><span class="s1">{{ </span><span class="s2">field</span><span class="s1">.</span><span class="s2">help_text</span><span class="s10">|</span><span class="s2">striptags </span><span class="s1">}}</span><span class="s9">&quot;</span><span class="s3">&gt;</span><span class="s0">{% endif %}</span>
+<a name="l42"><span class="ln">42   </span></a>                            <span class="s3">&lt;/</span><span class="s4">th</span><span class="s3">&gt;</span>
+<a name="l43"><span class="ln">43   </span></a>                        <span class="s0">{% endif %}</span>
+<a name="l44"><span class="ln">44   </span></a>                    {% endfor %}
+<a name="l45"><span class="ln">45   </span></a>                    {% if <span class="s2">inline_admin_formset</span><span class="s1">.</span><span class="s2">formset</span><span class="s1">.</span><span class="s2">can_delete </span><span class="s0">%}</span>
+<a name="l46"><span class="ln">46   </span></a>                        <span class="s3">&lt;</span><span class="s4">th</span><span class="s3">&gt;</span><span class="s0">{% trans </span><span class="s13">&quot;Delete?&quot; </span><span class="s0">%}</span><span class="s3">&lt;/</span><span class="s4">th</span><span class="s3">&gt;</span><span class="s0">{% endif %}</span>
+<a name="l47"><span class="ln">47   </span></a>                <span class="s3">&lt;/</span><span class="s4">tr</span><span class="s3">&gt;</span>
+<a name="l48"><span class="ln">48   </span></a>                &lt;/<span class="s4">thead</span><span class="s3">&gt;</span>
+<a name="l49"><span class="ln">49   </span></a>
+<a name="l50"><span class="ln">50   </span></a>                &lt;<span class="s4">tbody</span><span class="s3">&gt;</span>
+<a name="l51"><span class="ln">51   </span></a>                <span class="s0">{% for </span><span class="s2">inline_admin_form </span><span class="s11">in </span><span class="s2">inline_admin_formset </span><span class="s0">%}</span>
+<a name="l52"><span class="ln">52   </span></a>                    {% if <span class="s2">inline_admin_form</span><span class="s1">.</span><span class="s2">form</span><span class="s1">.</span><span class="s2">non_field_errors </span><span class="s0">%}</span>
+<a name="l53"><span class="ln">53   </span></a>                        <span class="s3">&lt;</span><span class="s4">tr</span><span class="s3">&gt;</span>
+<a name="l54"><span class="ln">54   </span></a>                            &lt;<span class="s4">td </span><span class="s8">colspan=</span><span class="s9">&quot;</span><span class="s1">{{ </span><span class="s2">inline_admin_form</span><span class="s10">|</span><span class="s2">cell_count </span><span class="s1">}}</span><span class="s9">&quot;</span><span class="s3">&gt;</span><span class="s1">{{ </span><span class="s2">inline_admin_form</span><span class="s1">.</span><span class="s2">form</span><span class="s1">.</span><span class="s2">non_field_errors </span><span class="s1">}}</span><span class="s3">&lt;/</span><span class="s4">td</span><span class="s3">&gt;</span>
+<a name="l55"><span class="ln">55   </span></a>                        &lt;/<span class="s4">tr</span><span class="s3">&gt;</span>
+<a name="l56"><span class="ln">56   </span></a>                    <span class="s0">{% endif %}</span>
+<a name="l57"><span class="ln">57   </span></a>                    <span class="s3">&lt;</span><span class="s4">tr </span><span class="s8">class=</span><span class="s9">&quot;form-row </span><span class="s0">{% cycle </span><span class="s13">&quot;row1&quot; &quot;row2&quot; </span><span class="s0">%} {% if </span><span class="s2">inline_admin_form</span><span class="s1">.</span><span class="s2">original </span><span class="s11">or </span><span class="s2">inline_admin_form</span><span class="s1">.</span><span class="s2">show_url </span><span class="s0">%}</span><span class="s9">has_original</span><span class="s0">{% endif %}{% if </span><span class="s2">forloop</span><span class="s1">.</span><span class="s2">last </span><span class="s11">and </span><span class="s2">inline_admin_formset</span><span class="s1">.</span><span class="s2">has_add_permission </span><span class="s0">%} </span><span class="s9">empty-form</span><span class="s0">{% endif %}</span><span class="s9">&quot;</span>
+<a name="l58"><span class="ln">58   </span></a>                        <span class="s8">id=</span><span class="s9">&quot;</span><span class="s1">{{ </span><span class="s2">inline_admin_formset</span><span class="s1">.</span><span class="s2">formset</span><span class="s1">.</span><span class="s2">prefix </span><span class="s1">}}</span><span class="s9">-</span><span class="s0">{% if </span><span class="s11">not </span><span class="s2">forloop</span><span class="s1">.</span><span class="s2">last </span><span class="s0">%}</span><span class="s1">{{ </span><span class="s2">forloop</span><span class="s1">.</span><span class="s2">counter0 </span><span class="s1">}}</span><span class="s0">{% else %}</span><span class="s9">empty</span><span class="s0">{% endif %}</span><span class="s9">&quot;</span><span class="s3">&gt;</span>
+<a name="l59"><span class="ln">59   </span></a>                        &lt;<span class="s4">td </span><span class="s8">class=</span><span class="s9">&quot;original&quot;</span><span class="s3">&gt;</span>
+<a name="l60"><span class="ln">60   </span></a>                            <span class="s0">{% if </span><span class="s2">inline_admin_form</span><span class="s1">.</span><span class="s2">original </span><span class="s11">or </span><span class="s2">inline_admin_form</span><span class="s1">.</span><span class="s2">show_url </span><span class="s0">%}</span><span class="s3">&lt;</span><span class="s4">p</span><span class="s3">&gt;</span>
+<a name="l61"><span class="ln">61   </span></a>                                <span class="s0">{% if </span><span class="s2">inline_admin_form</span><span class="s1">.</span><span class="s2">original </span><span class="s0">%}</span>
+<a name="l62"><span class="ln">62   </span></a>                                    <span class="s1">{{ </span><span class="s2">inline_admin_form</span><span class="s1">.</span><span class="s2">original </span><span class="s1">}}</span>
+<a name="l63"><span class="ln">63   </span></a>                                    <span class="s0">{% if </span><span class="s2">inline_admin_form</span><span class="s1">.</span><span class="s2">model_admin</span><span class="s1">.</span><span class="s2">show_change_link </span><span class="s11">and </span><span class="s2">inline_admin_form</span><span class="s1">.</span><span class="s2">model_admin</span><span class="s1">.</span><span class="s2">has_registered_model </span><span class="s0">%}</span><span class="s3">&lt;</span><span class="s4">a </span><span class="s8">href=</span><span class="s9">&quot;</span><span class="s0">{% url </span><span class="s2">inline_admin_form</span><span class="s1">.</span><span class="s2">model_admin</span><span class="s1">.</span><span class="s2">opts</span><span class="s10">|</span><span class="s2">admin_urlname</span><span class="s1">:</span><span class="s13">'change' </span><span class="s2">inline_admin_form</span><span class="s1">.</span><span class="s2">original</span><span class="s1">.</span><span class="s2">pk</span><span class="s10">|</span><span class="s2">admin_urlquote </span><span class="s0">%}</span><span class="s9">&quot; </span><span class="s8">class=</span><span class="s9">&quot;</span><span class="s0">{% if </span><span class="s2">inline_admin_formset</span><span class="s1">.</span><span class="s2">has_change_permission </span><span class="s0">%}</span><span class="s9">inlinechangelink</span><span class="s0">{% else %}</span><span class="s9">inlineviewlink</span><span class="s0">{% endif %}</span><span class="s9">&quot;</span><span class="s3">&gt;</span><span class="s0">{% if </span><span class="s2">inline_admin_formset</span><span class="s1">.</span><span class="s2">has_change_permission </span><span class="s0">%}{% trans </span><span class="s13">&quot;Change&quot; </span><span class="s0">%}{% else %}{% trans </span><span class="s13">&quot;View&quot; </span><span class="s0">%}{% endif %}</span><span class="s3">&lt;/</span><span class="s4">a</span><span class="s3">&gt;</span><span class="s0">{% endif %}</span>
+<a name="l64"><span class="ln">64   </span></a>                                {% endif %}
+<a name="l65"><span class="ln">65   </span></a>                                {% if <span class="s2">inline_admin_form</span><span class="s1">.</span><span class="s2">show_url </span><span class="s0">%}</span><span class="s3">&lt;</span><span class="s4">a </span><span class="s8">href=</span><span class="s9">&quot;</span><span class="s1">{{ </span><span class="s2">inline_admin_form</span><span class="s1">.</span><span class="s2">absolute_url </span><span class="s1">}}</span><span class="s9">&quot;</span><span class="s3">&gt;</span><span class="s0">{% trans </span><span class="s13">&quot;View on site&quot; </span><span class="s0">%}</span><span class="s3">&lt;/</span><span class="s4">a</span><span class="s3">&gt;</span><span class="s0">{% endif %}</span>
+<a name="l66"><span class="ln">66   </span></a>                            <span class="s3">&lt;/</span><span class="s4">p</span><span class="s3">&gt;</span><span class="s0">{% endif %}</span>
+<a name="l67"><span class="ln">67   </span></a>                            {% if <span class="s2">inline_admin_form</span><span class="s1">.</span><span class="s2">needs_explicit_pk_field </span><span class="s0">%}</span><span class="s1">{{ </span><span class="s2">inline_admin_form</span><span class="s1">.</span><span class="s2">pk_field</span><span class="s1">.</span><span class="s2">field </span><span class="s1">}}</span><span class="s0">{% endif %}</span>
+<a name="l68"><span class="ln">68   </span></a>                            <span class="s1">{{ </span><span class="s2">inline_admin_form</span><span class="s1">.</span><span class="s2">fk_field</span><span class="s1">.</span><span class="s2">field </span><span class="s1">}}</span>
+<a name="l69"><span class="ln">69   </span></a>                            <span class="s0">{% spaceless %}</span>
+<a name="l70"><span class="ln">70   </span></a>                                {% for <span class="s2">fieldset </span><span class="s11">in </span><span class="s2">inline_admin_form </span><span class="s0">%}</span>
+<a name="l71"><span class="ln">71   </span></a>                                    {% for <span class="s2">line </span><span class="s11">in </span><span class="s2">fieldset </span><span class="s0">%}</span>
+<a name="l72"><span class="ln">72   </span></a>                                        {% for <span class="s2">field </span><span class="s11">in </span><span class="s2">line </span><span class="s0">%}</span>
+<a name="l73"><span class="ln">73   </span></a>                                            {% if <span class="s2">field</span><span class="s1">.</span><span class="s2">field</span><span class="s1">.</span><span class="s2">is_hidden </span><span class="s0">%} </span><span class="s1">{{ </span><span class="s2">field</span><span class="s1">.</span><span class="s2">field </span><span class="s1">}} </span><span class="s0">{% endif %}</span>
+<a name="l74"><span class="ln">74   </span></a>                                        {% endfor %}
+<a name="l75"><span class="ln">75   </span></a>                                    {% endfor %}
+<a name="l76"><span class="ln">76   </span></a>                                {% endfor %}
+<a name="l77"><span class="ln">77   </span></a>                            {% endspaceless %}
+<a name="l78"><span class="ln">78   </span></a>                        <span class="s3">&lt;/</span><span class="s4">td</span><span class="s3">&gt;</span>
+<a name="l79"><span class="ln">79   </span></a>                        <span class="s0">{% for </span><span class="s2">fieldset </span><span class="s11">in </span><span class="s2">inline_admin_form </span><span class="s0">%}</span>
+<a name="l80"><span class="ln">80   </span></a>                            {% for <span class="s2">line </span><span class="s11">in </span><span class="s2">fieldset </span><span class="s0">%}</span>
+<a name="l81"><span class="ln">81   </span></a>                                {% for <span class="s2">field </span><span class="s11">in </span><span class="s2">line </span><span class="s0">%}</span>
+<a name="l82"><span class="ln">82   </span></a>                                    {% if <span class="s11">not </span><span class="s2">field</span><span class="s1">.</span><span class="s2">field</span><span class="s1">.</span><span class="s2">is_hidden </span><span class="s0">%}</span>
+<a name="l83"><span class="ln">83   </span></a>                                        <span class="s3">&lt;</span><span class="s4">td</span><span class="s0">{% if </span><span class="s2">field</span><span class="s1">.</span><span class="s2">field</span><span class="s1">.</span><span class="s2">name </span><span class="s0">%} </span><span class="s8">class=</span><span class="s9">&quot;field-</span><span class="s1">{{ </span><span class="s2">field</span><span class="s1">.</span><span class="s2">field</span><span class="s1">.</span><span class="s2">name </span><span class="s1">}}</span><span class="s9">&quot;</span><span class="s0">{% endif %}</span><span class="s3">&gt;</span>
+<a name="l84"><span class="ln">84   </span></a>                                            <span class="s0">{% if </span><span class="s2">field</span><span class="s1">.</span><span class="s2">is_readonly </span><span class="s0">%}</span>
+<a name="l85"><span class="ln">85   </span></a>                                                <span class="s3">&lt;</span><span class="s4">p</span><span class="s3">&gt;</span><span class="s1">{{ </span><span class="s2">field</span><span class="s1">.</span><span class="s2">contents </span><span class="s1">}}</span><span class="s3">&lt;/</span><span class="s4">p</span><span class="s3">&gt;</span>
+<a name="l86"><span class="ln">86   </span></a>                                            <span class="s0">{% else %}</span>
+<a name="l87"><span class="ln">87   </span></a>                                                <span class="s1">{{ </span><span class="s2">field</span><span class="s1">.</span><span class="s2">field</span><span class="s1">.</span><span class="s2">errors</span><span class="s1">.</span><span class="s2">as_ul </span><span class="s1">}}</span>
+<a name="l88"><span class="ln">88   </span></a>                                                {{ <span class="s2">field</span><span class="s1">.</span><span class="s2">field </span><span class="s1">}}</span>
+<a name="l89"><span class="ln">89   </span></a>                                            <span class="s0">{% endif %}</span>
+<a name="l90"><span class="ln">90   </span></a>                                        <span class="s3">&lt;/</span><span class="s4">td</span><span class="s3">&gt;</span>
+<a name="l91"><span class="ln">91   </span></a>                                    <span class="s0">{% endif %}</span>
+<a name="l92"><span class="ln">92   </span></a>                                {% endfor %}
+<a name="l93"><span class="ln">93   </span></a>                            {% endfor %}
+<a name="l94"><span class="ln">94   </span></a>                        {% endfor %}
+<a name="l95"><span class="ln">95   </span></a>                        {% if <span class="s2">inline_admin_formset</span><span class="s1">.</span><span class="s2">formset</span><span class="s1">.</span><span class="s2">can_delete </span><span class="s0">%}</span>
+<a name="l96"><span class="ln">96   </span></a>                            <span class="s3">&lt;</span><span class="s4">td </span><span class="s8">class=</span><span class="s9">&quot;delete&quot;</span><span class="s3">&gt;</span><span class="s0">{% if </span><span class="s2">inline_admin_form</span><span class="s1">.</span><span class="s2">original </span><span class="s0">%}</span><span class="s1">{{ </span><span class="s2">inline_admin_form</span><span class="s1">.</span><span class="s2">deletion_field</span><span class="s1">.</span><span class="s2">field </span><span class="s1">}}</span><span class="s0">{% endif %}</span><span class="s3">&lt;/</span><span class="s4">td</span><span class="s3">&gt;</span>
+<a name="l97"><span class="ln">97   </span></a>                        <span class="s0">{% endif %}</span>
+<a name="l98"><span class="ln">98   </span></a>                    <span class="s3">&lt;/</span><span class="s4">tr</span><span class="s3">&gt;</span>
+<a name="l99"><span class="ln">99   </span></a>                <span class="s0">{% endfor %}</span>
+<a name="l100"><span class="ln">100  </span></a>                <span class="s3">&lt;/</span><span class="s4">tbody</span><span class="s3">&gt;</span>
+<a name="l101"><span class="ln">101  </span></a>            &lt;/<span class="s4">table</span><span class="s3">&gt;</span>
+<a name="l102"><span class="ln">102  </span></a>        &lt;/<span class="s4">fieldset</span><span class="s3">&gt;</span>
+<a name="l103"><span class="ln">103  </span></a>    &lt;/<span class="s4">div</span><span class="s3">&gt;</span>
+<a name="l104"><span class="ln">104  </span></a>&lt;/<span class="s4">div</span><span class="s3">&gt;</span>
+<a name="l105"><span class="ln">105  </span></a></pre>
+</body>
+</html>

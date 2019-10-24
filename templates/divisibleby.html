@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>divisibleby</title>
+</head>
+<body>
+
+# Değişken değeri istenilen değere tam bölünüyor ise True döner
+
+{{ 21|divisibleby:"3" }}
+
+{% with 21|divisibleby:"3" as kalan %}
+    Kalan: {{ kalan }}
+{% endwith %}
+
+{{ bes|divisibleby:"2" }}
+
+
+<ul>
+
+    Kayıdın ID si çift sayı ise ise kayıtları göster
+
+    {% for k in kullanicilar|dictsort:"soyisim" %}
+
+        {% with k.id|divisibleby:"2" as kalan %}
+            {% if kalan %}
+
+                ID: {{ k.id }}
+
+                <li>{{ k.isim }} {{ k.soyisim }} {{ k.id|divisibleby:"2" }}</li>
+            {% endif %}
+
+        {% endwith %}
+
+    {% endfor %}
+</ul>
+
+
+</body>
+</html>

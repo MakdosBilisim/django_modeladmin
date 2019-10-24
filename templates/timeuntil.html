@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>timeuntil</title>
+</head>
+<body>
+
+# Gelecek tarihe ile şimdi zaman arasındaki kalan süre
+
+{% for k in kullanicilar %}
+    {{ k.toplantitarih|timeuntil }} kaldı
+{% endfor %}
+
+</body>
+</html>

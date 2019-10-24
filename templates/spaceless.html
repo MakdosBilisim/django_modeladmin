@@ -1,0 +1,47 @@
+{% spaceless %}
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>spaceless</title>
+    </head>
+    <body>
+{% endspaceless %}
+
+
+{% spaceless %}
+<p>
+        <b>
+    <a href="/" title="ana sayfa">Anasayfa</a>
+
+        </b>
+</p>
+
+<p>p b ve p etiketleri arasında metin olmadığı için tek satıra çevirebilir.</p>
+{% endspaceless %}
+
+
+
+{% spaceless %}
+    <b>
+        # b etiketinin üstünde bir etiket olmadığı için birleştiremez
+    </b>
+{% endspaceless %}
+
+#
+{% spaceless %}
+  <p>
+
+
+      <b>   b etiketi ile p etiketi arasındaki boşlukları siler ama bu metin ile b etiketi arasındaki boşlukları silmez      </b>
+
+
+  </p>
+{% endspaceless %}
+
+
+
+</body>
+</html>
+
+# yalnızca html etiketler arasındaki boşlukları siler.

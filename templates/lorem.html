@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>lorem</title>
+</head>
+
+
+<body>
+# metin oluşturma
+
+{% verbatim %}
+{% lorem adet method rastgele %}
+{% endverbatim %}
+
+<hr>
+
+# rastgele 5 paragraflık metin üret
+# üretilen metin p etiketi içine alınır
+# random istenirse Lorem ipsum dolor sit amet ile başlamayan metinler üretilir.
+{% lorem 5 p random %}
+
+
+<hr>
+<hr>
+# 250 kelimelik lorem ipsum ile başlayan metin üret
+{% lorem 250 w %}
+
+<hr>
+<hr>
+# Lorem ipsum ile başlayan bir paragraf oluşturur
+{% lorem %}
+
+
+</body>
+</html>

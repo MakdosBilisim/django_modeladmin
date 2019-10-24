@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>templatetag</title>
+</head>
+<body>
+
+# templatetag kullanımında çalışmasını engeleyip, kullanım örneği olarak ekrana bastırmak için kullanılır.
+
+
+{% templatetag openblock %} now "jS F Y H:i" {% templatetag closeblock %}
+{% templatetag openvariable %} değişken {% templatetag closevariable %}
+{% templatetag opencomment %} yorum satırı {% templatetag closecomment %}
+
+
+
+
+
+
+{% verbatim %}
+
+    openblock {%
+    closeblock %}
+
+
+    openvariable {{
+    closevariable }}
+
+
+    openbrace {
+    closebrace }
+
+
+    opencomment {#
+    closecomment #}
+
+{% endverbatim %}
+
+
+</body>
+</html>

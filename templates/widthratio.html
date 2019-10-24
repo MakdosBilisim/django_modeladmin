@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>widthratio</title>
+</head>
+<body>
+
+# Bir değerin  maksimum değere oranını hesaplayıp, bir oranla çarpar
+# chart kullanımlarında maksimum değerle arasında oranı hesaplatıp ekrana sığdırma yapılabilir.
+# integer değer döndürür yani kusüratları yukarıya tamamlar ve tam sayı döndürür.
+
+
+
+{% widthratio 20 50 100 as sonuc %}
+
+
+{% verbatim %}
+{% widthratio A B C as sonuc %}
+{% widthratio 20 50 100 as sonuc %}
+{% endverbatim %}
+
+
+(A / B) * C
+(20 / 50) * 100
+
+
+Sonuç: {{ sonuc }}
+
+
+</body>
+</html>

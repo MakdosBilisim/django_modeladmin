@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>make_list</title>
+</head>
+<body>
+
+# String değişkeni listeye çevirir
+
+{{ "muslu"|make_list }}
+
+
+{% for l in "muslu"|make_list %}
+
+    {{ l|upper }}
+
+{% endfor %}
+
+
+</body>
+</html>

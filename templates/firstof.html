@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>firstof</title>
+</head>
+<body>
+
+
+# False olmayan ilk değişkene kadar işlem yapar.
+# Tüm değişkenler True ise çıktı vermez
+<hr>
+{% firstof bir iki uc  "Hiç bir False değer gelmedi" %}
+
+<hr>
+{% firstof bir iki uc as eslesen %}
+<h1>{{ eslesen }}</h1>
+
+
+
+<hr>
+# Koşul karşılığı
+{% verbatim %}
+
+{% if var1 %}
+    {{ var1 }}
+{% elif var2 %}
+    {{ var2 }}
+{% elif var3 %}
+    {{ var3 }}
+{% endif %}
+
+{% endverbatim %}
+
+</body>
+</html>

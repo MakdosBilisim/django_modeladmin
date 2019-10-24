@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>filter</title>
+</head>
+<body>
+
+
+# filter ile block içindeki tüm text topluca filtre uygulanabilir.
+# escape ve safe kullanılamaz
+# escape için autoescape kullanılmalı
+
+
+{% filter truncatewords:7|cut:'a' %}
+    Burada yazanların ilk 4 kelimesi gösterilecek, ... eklenecek ve a harfleri silinecek
+{% endfilter %}
+
+
+</body>
+</html>

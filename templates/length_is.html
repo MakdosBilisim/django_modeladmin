@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>length_is</title>
+</head>
+<body>
+
+# List ve stringlerin karakter sayısı istenen ise True döndürür
+
+kayıt sayısı 4: {{ kayitlar|length_is:4 }}
+
+{% if kayitlar|length_is:4 %} Kayıt sayısı 4 {% endif %}
+
+
+
+{% for k in kullanicilar %}
+
+    {% if k.isim|length_is:5 %}
+        ismi 5 harfli olan kayıt: {{ k.isim }}
+    {% endif %}
+
+
+{% endfor %}
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>default</title>
+</head>
+<body>
+
+# Değişken False ise yerine başka bir değer göstermek
+{{ False|default:"Değer False" }}
+
+# Değişken boş ise
+{{ ""|default:"Değer Boş" }}
+
+
+# Döngüde False değerli bir değişken var ise başka bir değer göster
+{% for k in kullanicilar %}
+    {{ k.yazar|default:"Değer False" }}
+{% endfor %}
+
+#Queryset boş ise BOŞ yaz
+{{ kullanicilar|default:"BOŞ" }}
+
+#Queryset boş ise BOŞ yaz
+{{ d_ilebiten_kullanicilar|default:"BOŞ" }}
+
+</body>
+</html>

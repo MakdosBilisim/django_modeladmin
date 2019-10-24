@@ -1,0 +1,19 @@
+{% load humanize %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>intword</title>
+</head>
+<body>
+
+# Yerelleştirme koşullarına göre (Ör: LANGUAGE_CODE) verilen değeri milyon kaysyaılarına göre yazar
+# Dile göre virgül yerine nokta ve dilin tercümesini kullanılır
+
+
+{{ 350000|intword }}
+{{ 350000000|intword }}
+{{ 3535353535353535|intword }}
+
+</body>
+</html>

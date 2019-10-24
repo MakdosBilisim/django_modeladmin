@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>yesno</title>
+</head>
+<body>
+
+# True, False ve None değerleri içeren değişkenler için farklı değerler atamak
+# None için karşılık kullanılmasa False döndürür
+
+True: {{ True|yesno:"evet,hayir,belki" }}
+False: {{ False|yesno:"evet,hayir,belki" }}
+None: {{ None|yesno:"evet,hayir,belki" }}
+
+</body>
+</html>

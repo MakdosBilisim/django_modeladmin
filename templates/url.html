@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>url</title>
+</head>
+<body>
+
+{% url 'ozel_url' 1 as son_url %}
+
+<a href="{{ son_url }}"> {{ son_url }}</a>
+
+<hr>
+
+{% url 'ozel_url_muslu' 'muslu' 'yuksektepe' as ozel_url_muslu %}
+
+<a href="{{ ozel_url_muslu }}"> {{ ozel_url_muslu }}</a>
+
+
+</body>
+</html>

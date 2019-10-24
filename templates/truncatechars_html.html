@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>truncatechars_html</title>
+</head>
+<body>
+
+# truncatechars ile aynı ama html kodların içindeki metinlerin karakter sayıları dikkate alınır.
+# Değişkenin karakter sayısından 3 (... için) çıkarılır.
+
+{{ "<strong>strong</strong>"|truncatechars_html:5 }}
+
+</body>
+</html>
